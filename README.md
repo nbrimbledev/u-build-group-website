@@ -11,6 +11,10 @@ npm ci
 npm run dev
 ```
 
-Run `npm run build` and `npm run lint` before publishing. The site is configured for the `ubuildgroup.ca` domain, but creating this GitHub repository does not change the live Vercel deployment.
+Run `npm test`, `npm run lint`, and `npx next build` before publishing. The local `npm run build` command uses Vinext; the existing Vercel project uses the Next.js build.
+
+## Deployment
+
+The existing Vercel project `u-build-group` is connected to this repository. Pushes to `main` trigger production deployments. Other branches can produce previews. The site is configured for the `ubuildgroup.ca` domain.
 
 Local environment files, build output, and Vercel project linkage are excluded by `.gitignore`. Do not commit credentials or customer information.
