@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Selected U Build Group locations in Manitoba</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<style>
+  :root {
+    color-scheme: light;
+    --paper: #f7f9fb;
+    --mineral: #e8edf2;
+    --ink: #111c26;
+    --copy: #53616c;
+    --construction: #014cbb;
+    --everett: #146b29;
+    --properties: #016b7b;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--mineral); font-family: Arial, sans-serif; }
+  body { overflow: hidden; }
+  #map { position: absolute; inset: 0; background: var(--mineral); }
+  #map:focus-visible { outline: 3px solid var(--construction); outline-offset: -5px; }
+  .leaflet-tile-pane { filter: saturate(.68) brightness(1.04) contrast(.92); }
+  .leaflet-container { background: #dce4eb; font-family: Arial, sans-serif; }
+  .leaflet-control-attribution { padding: 3px 7px; border-radius: 7px 0 0; background: rgb(247 249 251 / 92%); color: #596467; font-size: 10px; }
+  .leaflet-control-attribution a { color: #1e3a5f; }
+  .leaflet-bar { overflow: hidden; border: 0; border-radius: 10px; box-shadow: 0 8px 22px rgb(17 29 79 / 12%); }
+  .leaflet-touch .leaflet-bar a,
+  .leaflet-bar a { width: 44px; height: 44px; line-height: 44px; color: var(--ink); background: var(--paper); border-bottom-color: rgb(15 30 70 / 10%); }
+  .leaflet-touch .leaflet-control-zoom-in,
+  .leaflet-touch .leaflet-control-zoom-out { font-size: 24px; line-height: 44px; }
+  .leaflet-bar a:hover { background: var(--mineral); }
+  .leaflet-bar a:focus-visible { position: relative; z-index: 1; outline: 3px solid var(--construction); outline-offset: -3px; }
+  .site { display: block; }
+  .site .dot { width: 14px; height: 14px; border: 3px solid var(--paper); border-radius: 50%; box-shadow: 0 3px 8px rgb(0 0 0 / 28%); }
+  .site .label {
+    position: absolute; left: 20px; top: -5px; white-space: nowrap;
+    padding: 5px 9px; border-radius: 999px; background: rgb(247 249 251 / 95%);
+    box-shadow: 0 5px 16px rgb(15 30 70 / 10%); color: var(--ink); font-size: 12px; font-weight: 600;
+  }
+  .site .label.left { right: 20px; left: auto; }
+  .site .note { margin-inline-start: 4px; color: #697477; font-size: 10.5px; font-weight: 400; }
+  .leaflet-tooltip {
+    border: 0; border-radius: 999px; background: rgb(247 249 251 / 97%); box-shadow: 0 5px 16px rgb(15 30 70 / 12%);
+    color: var(--ink); font-size: 12px; font-weight: 600;
+  }
+  .leaflet-tooltip::before { display: none; }
+  .legend {
+    position: absolute; z-index: 402; right: 14px; bottom: 18px;
+    width: min(310px, calc(100% - 28px)); display: grid; gap: 10px;
+    padding: 16px; border-radius: 16px; background: rgb(247 249 251 / 96%); box-shadow: 0 12px 32px rgb(15 30 70 / 14%);
+  }
+  .legend strong { color: #182326; font-size: 13px; }
+  .legend div { display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: 10px; align-items: start; color: #4f5b5e; font-size: 12px; line-height: 1.4; }
+  .legend .key { width: 12px; height: 12px; margin-top: 2px; border-radius: 50%; }
+  .legend b, .legend span { display: block; }
+  .legend b { color: #182326; font-size: 12px; }
+  .map-status,
+  .map-fallback {
+    position: absolute; z-index: 500; inset: 0; display: grid; place-content: center; gap: 16px;
+    padding: 32px; background: var(--mineral); color: var(--copy); text-align: center;
+  }
+  .map-status { grid-auto-flow: column; align-items: center; }
+  .map-status[hidden], .map-fallback[hidden] { display: none; }
+  .map-spinner { width: 22px; height: 22px; border: 3px solid rgb(15 30 70 / 15%); border-top-color: var(--construction); border-radius: 50%; animation: spin .8s linear infinite; }
+  .map-fallback strong { color: var(--ink); font-size: 1.15rem; }
+  .map-fallback p { max-width: 48ch; margin: 0; line-height: 1.55; }
+  .visually-hidden {
+    position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important;
+    overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (max-width: 600px) {
+    body {
+      display: grid;
+      grid-template-rows: minmax(300px, 1fr) auto;
+    }
+    #map {
+      position: relative;
+      inset: auto;
+      min-height: 0;
+    }
+    .site .label {
+      max-width: 150px;
+      white-space: normal;
+      line-height: 1.2;
+    }
+    .legend {
+      position: relative;
+      z-index: 402;
+      right: auto;
+      bottom: auto;
+      width: auto;
+      margin: 0;
+      gap: 8px;
+      padding: 12px 14px 14px;
+      border-radius: 0;
+      background: var(--paper);
+      box-shadow: 0 -8px 22px rgb(15 30 70 / 10%);
+    }
+    .legend strong { font-size: 12px; }
+    .legend div {
+      gap: 8px;
+      font-size: 11px;
+      line-height: 1.32;
+    }
+    .legend b { font-size: 11px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .map-spinner { animation: none; } }
+</style>
+</head>
+<body>
+<div id="map" role="region" aria-label="Interactive map of selected U Build Group locations" aria-describedby="map-description"></div>
+<p id="map-description" class="visually-hidden">Use the zoom controls or arrow keys to explore selected communities and project locations across Manitoba. A complete text list follows.</p>
+
+<aside class="legend" aria-label="Company map legend">
+  <strong>Company focus</strong>
+  <div><span class="key" style="background:#014cbb" aria-hidden="true"></span><span><b>U Build Construction Division</b>Projects elsewhere across Manitoba</span></div>
+  <div><span class="key" style="background:#146b29" aria-hidden="true"></span><span><b>Everett Construction Group</b>Northern, remote and First Nations communities</span></div>
+  <div><span class="key" style="background:#016b7b" aria-hidden="true"></span><span><b>U Build Developments</b>Owned commercial building at 9158 Quarry Road. Tenants: Tim Hortons, Esso and Stony Mountain Convenience</span></div>
+</aside>
+
+<section class="visually-hidden" aria-labelledby="location-list-title">
+  <h1 id="location-list-title">Selected Manitoba locations</h1>
+  <h2>U Build Construction Division</h2>
+  <ul>
+    <li>Winnipeg</li><li>Stony Mountain, head office</li><li>Selkirk</li><li>St. Andrews</li><li>West St. Paul</li><li>East St. Paul</li><li>Portage la Prairie</li><li>Shilo</li><li>West Hawk Lake</li><li>Winkler</li><li>Emerson</li><li>St. Malo</li><li>De Salaberry</li><li>Churchill</li><li>Thompson</li><li>Gillam</li><li>Lorette</li><li>Lac du Bonnet</li><li>Whitemouth</li><li>Grand Rapids</li><li>Manitou</li><li>Grand Marais</li><li>Birds Hill</li><li>Sagkeeng First Nation</li><li>South Indian Lake</li>
+  </ul>
+  <h2>Everett Construction Group</h2>
+  <ul>
+    <li>Peguis First Nation</li><li>Fisher River Cree Nation</li><li>Cross Lake</li><li>The Pas</li>
+  </ul>
+  <h2>U Build Developments</h2>
+  <ul>
+    <li>9158 Quarry Road, Stony Mountain, owned commercial building. Current tenants are Tim Hortons, Esso and Stony Mountain Convenience.</li>
+  </ul>
+</section>
+
+<div id="map-status" class="map-status" role="status" aria-live="polite">
+  <span class="map-spinner" aria-hidden="true"></span>
+  <span>Loading selected locations…</span>
+</div>
+<div id="map-fallback" class="map-fallback" role="note" hidden>
+  <strong>The interactive map is unavailable.</strong>
+  <p>U Build Construction Division serves projects across Manitoba. Everett Construction Group focuses on northern, remote and First Nations communities. U Build Developments owns a commercial property at 9158 Quarry Road in Stony Mountain.</p>
+</div>
+<noscript>
+  <div class="map-fallback">
+    <strong>The interactive map requires JavaScript.</strong>
+    <p>U Build Construction Division serves projects across Manitoba. Everett Construction Group focuses on northern, remote and First Nations communities. U Build Developments owns a commercial property at 9158 Quarry Road in Stony Mountain.</p>
+  </div>
+</noscript>
+
+<script>
+  function showMapFallback() {
+    document.getElementById("map-status").hidden = true;
+    document.getElementById("map-fallback").hidden = false;
+    document.getElementById("map").setAttribute("aria-hidden", "true");
+  }
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous" onerror="showMapFallback()"></script>
+<script>
+  if (window.L) {
+    var SITES = [
+      { name: "Winnipeg", lat: 49.8951, lon: -97.1384, company: "ubuild" },
+      { name: "Stony Mountain", lat: 50.0803, lon: -97.2153, company: "ubuild", label: false, side: "left", dy: -24, note: "Head office" },
+      { name: "9158 Quarry Rd", lat: 50.0939635, lon: -97.2308282, company: "properties", label: false, side: "left", dy: 24, note: "Owned property" },
+      { name: "Selkirk", lat: 50.1436, lon: -96.8839, company: "ubuild" },
+      { name: "St. Andrews", lat: 50.1000, lon: -96.9600, company: "ubuild" },
+      { name: "West St. Paul", lat: 50.0167, lon: -97.1400, company: "ubuild" },
+      { name: "East St. Paul", lat: 49.9678, lon: -96.9739, company: "ubuild" },
+      { name: "Portage la Prairie", lat: 49.9728, lon: -98.2919, company: "ubuild" },
+      { name: "Shilo", lat: 49.7833, lon: -99.6333, company: "ubuild" },
+      { name: "West Hawk Lake", lat: 49.7667, lon: -95.1833, company: "ubuild" },
+      { name: "Winkler", lat: 49.1817, lon: -97.9403, company: "ubuild" },
+      { name: "Emerson", lat: 49.0069, lon: -97.2094, company: "ubuild" },
+      { name: "St. Malo", lat: 49.3167, lon: -96.9500, company: "ubuild" },
+      { name: "De Salaberry", lat: 49.4425, lon: -96.9800, company: "ubuild" },
+      { name: "Churchill", lat: 58.7692680, lon: -94.1729517, company: "ubuild", label: false, side: "left" },
+      { name: "Thompson", lat: 55.7433470, lon: -97.8634640, company: "ubuild", label: false },
+      { name: "Gillam", lat: 56.3449837, lon: -94.7062234, company: "ubuild", label: false, side: "left" },
+      { name: "Lorette", lat: 49.7393593, lon: -96.8742479, company: "ubuild" },
+      { name: "Lac du Bonnet", lat: 50.2548984, lon: -96.0621364, company: "ubuild" },
+      { name: "Whitemouth", lat: 49.9541656, lon: -95.9766181, company: "ubuild" },
+      { name: "Grand Rapids", lat: 53.1747650, lon: -99.2697140, company: "ubuild", label: false },
+      { name: "Manitou", lat: 49.2398981, lon: -98.5388162, company: "ubuild" },
+      { name: "Grand Marais", lat: 50.5417568, lon: -96.6174783, company: "ubuild" },
+      { name: "Birds Hill", lat: 49.9726699, lon: -97.0074273, company: "ubuild" },
+      { name: "Sagkeeng First Nation", lat: 50.6151626, lon: -96.3088654, company: "ubuild" },
+      { name: "South Indian Lake", lat: 56.7808500, lon: -98.9300000, company: "ubuild", label: false, side: "left" },
+      { name: "Peguis First Nation", lat: 51.3500, lon: -97.5800, company: "everett", label: false, side: "left", dy: -10 },
+      { name: "Fisher River Cree Nation", lat: 51.5200, lon: -97.5200, company: "everett" },
+      { name: "Cross Lake", lat: 54.6167, lon: -97.7667, company: "everett", label: false },
+      { name: "The Pas", lat: 53.8250, lon: -101.2542, company: "everett", label: false }
+    ];
+
+    var map = L.map("map", {
+      scrollWheelZoom: false,
+      zoomControl: true,
+      attributionControl: true,
+      maxBounds: [[48.4, -103.6], [60.6, -87.8]],
+      maxBoundsViscosity: 1,
+      minZoom: 5,
+      maxZoom: 14
+    });
+
+    var tileLoaded = false;
+    var fallbackTimer = window.setTimeout(function () {
+      if (!tileLoaded) showMapFallback();
+    }, 8000);
+
+    var tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "© OpenStreetMap contributors",
+      maxZoom: 18
+    }).addTo(map);
+
+    tiles.once("tileload", function () {
+      tileLoaded = true;
+      window.clearTimeout(fallbackTimer);
+      document.getElementById("map-status").hidden = true;
+    });
+
+    var tileErrors = 0;
+    tiles.on("tileerror", function () {
+      tileErrors += 1;
+      if (!tileLoaded && tileErrors >= 6) showMapFallback();
+    });
+
+    var markers = SITES.map(function (site) {
+      var color = site.company === "everett" ? "#146b29" : site.company === "properties" ? "#016b7b" : "#014cbb";
+      var markerHtml = '<div class="dot" style="background:' + color + '"></div>';
+      if (site.label) {
+        markerHtml += '<div class="label ' + (site.side || "") + '" style="top:' + (-5 + (site.dy || 0)) + 'px">' + site.name +
+          (site.note ? ' <span class="note">' + site.note + '</span>' : '') + '</div>';
+      }
+      var marker = L.marker([site.lat, site.lon], {
+        icon: L.divIcon({ className: "site", iconSize: [14, 14], iconAnchor: [7, 7], html: markerHtml }),
+        title: site.name,
+        keyboard: false
+      }).addTo(map);
+      if (!site.label) marker.bindTooltip(site.name, { direction: "right", offset: [10, 0] });
+      return marker;
+    });
+
+    window.requestAnimationFrame(function () {
+      markers.forEach(function (marker) {
+        var markerElement = marker.getElement();
+        if (markerElement) markerElement.setAttribute("aria-hidden", "true");
+      });
+    });
+
+    var siteBounds = L.featureGroup(markers).getBounds();
+    var resizeTimer;
+
+    function fitSiteBounds() {
+      var narrowMap = window.matchMedia("(max-width: 600px)").matches;
+      map.invalidateSize({ pan: false });
+      map.fitBounds(siteBounds, narrowMap ? {
+        paddingTopLeft: [18, 18],
+        paddingBottomRight: [18, 28],
+        maxZoom: 5
+      } : {
+        paddingTopLeft: [28, 28],
+        paddingBottomRight: [350, 76],
+        maxZoom: 6
+      });
+    }
+
+    fitSiteBounds();
+    window.addEventListener("resize", function () {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(fitSiteBounds, 140);
+    });
+  } else {
+    showMapFallback();
+  }
+</script>
+</body>
+</html>

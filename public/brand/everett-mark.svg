@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="112 141 87 125">
+  <linearGradient id="e1" gradientUnits="userSpaceOnUse" x1="116.297" y1="203.3264" x2="194.3929" y2="203.3264">
+    <stop offset="0" style="stop-color:#138708"></stop><stop offset="0.508" style="stop-color:#32CD33"></stop><stop offset="1" style="stop-color:#138708"></stop>
+  </linearGradient>
+  <linearGradient id="e2" gradientUnits="userSpaceOnUse" x1="116.297" y1="203.3264" x2="194.3929" y2="203.3264">
+    <stop offset="0" style="stop-color:#004B1D"></stop><stop offset="0.508" style="stop-color:#318331"></stop><stop offset="1" style="stop-color:#138708"></stop>
+  </linearGradient>
+  <linearGradient id="e3" gradientUnits="userSpaceOnUse" x1="116.297" y1="251.6754" x2="194.3929" y2="251.6754">
+    <stop offset="0" style="stop-color:#004B1D"></stop><stop offset="0.508" style="stop-color:#318331"></stop><stop offset="1" style="stop-color:#138708"></stop>
+  </linearGradient>
+  <linearGradient id="e4" gradientUnits="userSpaceOnUse" x1="126.0838" y1="205.2079" x2="125.8861" y2="252.8332">
+    <stop offset="0" style="stop-color:#036830"></stop><stop offset="0.508" style="stop-color:#32CD33"></stop><stop offset="1" style="stop-color:#138708"></stop>
+  </linearGradient>
+  <path style="fill:url(#e1)" d="M194.4,145.2v19.5h-78.1v-19.5H194.4z M116.3,193.6v19.5v28.9v19.5h13.6h64.5v-19.5h-58.6v-28.9h58.6v-19.5h-64.5H116.3z"></path>
+  <polygon style="fill:url(#e2)" points="135.8,213.1 116.3,193.6 194.4,193.6 194.4,213.1"></polygon>
+  <polygon style="fill:url(#e3)" points="116.3,261.4 135.8,241.9 194.4,241.9 194.4,261.4"></polygon>
+  <polygon style="fill:url(#e4)" points="135.8,213.1 135.8,241.9 116.3,261.4 116.3,193.6"></polygon>
+</svg>
