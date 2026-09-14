@@ -11,9 +11,9 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#0f1e46",
     icons: [
       {
-        src: "/brand/ubuild-group-mark.png",
-        sizes: "1000x1000",
-        type: "image/png",
+        src: "/brand/u-mark-blue.svg",
+        sizes: "any",
+        type: "image/svg+xml",
       },
     ],
   };

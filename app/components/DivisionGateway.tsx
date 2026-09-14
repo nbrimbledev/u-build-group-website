@@ -77,7 +77,7 @@ export function DivisionGateway() {
       <header className="portfolio-header">
         <a className="portfolio-brand" href="#top" aria-label="U Build Group home">
           <span className="portfolio-brand-mark">
-            <Image src="/brand/ubuild-group-mark.png" alt="" width={44} height={44} priority />
+            <Image src="/brand/u-mark-blue.svg" alt="" width={44} height={44} priority />
           </span>
           <span>U Build <b>Group</b></span>
         </a>

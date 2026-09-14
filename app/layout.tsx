@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "U Build Group",
     description: "Specialized construction companies, working from one Manitoba office.",
   },
-  icons: { icon: "/brand/ubuild-group-mark.png" },
+  icons: { icon: { url: "/brand/u-mark-blue.svg", type: "image/svg+xml", sizes: "any" } },
   manifest: "/manifest.webmanifest",
 };
 
@@ -42,7 +42,7 @@ const structuredData = {
   "@type": "Organization",
   name: "U Build Group",
   url: "https://ubuildgroup.ca",
-  logo: "https://ubuildgroup.ca/brand/ubuild-group-mark.png",
+  logo: "https://ubuildgroup.ca/brand/u-mark-blue.svg",
   telephone: "+1-204-977-1956",
   email: "info@ubuildconstruction.ca",
   address: {

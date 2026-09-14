@@ -133,7 +133,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="footer-grid">
           <div>
-            <Image src="/brand/ubuild-group-mark.png" width={58} height={58} alt="" />
+            <Image src="/brand/u-mark-blue.svg" width={58} height={58} alt="" />
             <strong className="footer-brand">U Build Group</strong>
           </div>
           <div>

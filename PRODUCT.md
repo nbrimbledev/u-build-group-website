@@ -55,7 +55,7 @@ The Group does not use its own inquiry form. Shared office contact details remai
 
 ## Evidence on Hand
 
-- Group mark: `public/brand/ubuild-group-mark.png`
+- Group mark: `public/brand/u-mark-blue.svg`
 - Group three-building symbol: `public/brand/ubuild-group-buildings.svg`
 - Everett marks: `public/brand/everett-logo.svg` and `public/brand/everett-mark.svg`
 - Shared office details and public social links: `app/site-data.ts`
