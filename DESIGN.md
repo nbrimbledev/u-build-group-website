@@ -147,7 +147,9 @@ The palette combines a cool neutral foundation with one parent navy and distinct
 
 **The Signature Mark Rule.** The hero uses the three-building silhouette alone, filled with the navy sampled from the U Build Construction logo. The segmented bar above the company routes uses Construction Blue, Foundation Navy and Properties Teal.
 
-**The Project Film Rule.** Every current U Build Construction project image may appear in the two ambient hero tracks. The order changes between visits, the rows move in opposite directions, and a mineral veil keeps the photography secondary to the headline and Group symbol. The loop is decorative, pauses outside the viewport, and becomes a still composition when reduced motion is requested.
+**The Project Film Rule.** Every current U Build Construction project image appears in both ambient hero tracks. The rows use offset sequences and move at the same speed so matching photographs stay separated. A mineral veil keeps the photography secondary to the headline and Group symbol. The loop is decorative, pauses outside the viewport, and becomes a still composition when reduced motion is requested.
+
+**The Foundation Watermark Rule.** The Group U sits as a fixed, low-opacity background field through the shared-foundation section. It ends before the Manitoba map so the two sections remain visually distinct.
 
 ## Typography
 

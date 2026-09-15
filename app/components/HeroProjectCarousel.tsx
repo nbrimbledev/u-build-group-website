@@ -16,42 +16,15 @@ const projectImages: ProjectImage[] = [
   { src: "/project-carousel/west-hawk-lake.webp", focus: "lower" },
 ];
 
-function shuffledImages() {
-  const images = [...projectImages];
-
-  for (let index = images.length - 1; index > 0; index -= 1) {
-    const swapIndex = Math.floor(Math.random() * (index + 1));
-    [images[index], images[swapIndex]] = [images[swapIndex], images[index]];
-  }
-
-  return images;
-}
-
-function fillSequence(images: ProjectImage[]) {
-  return [...images, ...images.slice(0, 2)];
-}
-
-const initialRows = [
-  fillSequence(projectImages),
-  fillSequence([...projectImages].reverse()),
+const rows = [
+  projectImages,
+  [projectImages[2], projectImages[3], projectImages[4], projectImages[0], projectImages[1]],
 ];
 
 export function HeroProjectCarousel() {
   const carouselRef = useRef<HTMLDivElement>(null);
-  const [rows, setRows] = useState(initialRows);
   const [isInView, setIsInView] = useState(false);
   const [isPageVisible, setIsPageVisible] = useState(true);
-
-  useEffect(() => {
-    const frame = window.requestAnimationFrame(() => {
-      setRows([
-        fillSequence(shuffledImages()),
-        fillSequence(shuffledImages()),
-      ]);
-    });
-
-    return () => window.cancelAnimationFrame(frame);
-  }, []);
 
   useEffect(() => {
     const carousel = carouselRef.current;
@@ -84,7 +57,7 @@ export function HeroProjectCarousel() {
     >
       {rows.map((images, rowIndex) => (
         <div
-          className={`hero-project-carousel-row ${rowIndex === 0 ? "is-forward" : "is-reverse"}`}
+          className={`hero-project-carousel-row ${rowIndex === 0 ? "is-forward" : "is-offset"}`}
           key={rowIndex}
         >
           <div className="hero-project-carousel-track">
@@ -98,6 +71,7 @@ export function HeroProjectCarousel() {
                       fill
                       className={image.focus === "lower" ? "is-lower-focus" : undefined}
                       sizes="(max-width: 700px) 56vw, 22vw"
+                      loading="eager"
                     />
                   </span>
                 ))}

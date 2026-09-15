@@ -20,7 +20,9 @@ export default function Home() {
     <main id="main-content">
       <DivisionGateway />
 
-      <section className="content-section group-section" id="group" aria-labelledby="group-title">
+      <section className="group-section" id="group" aria-labelledby="group-title">
+        <div className="group-brand-watermark" aria-hidden="true" />
+        <div className="content-section group-section-content">
         <Reveal>
           <div className="group-intro">
             <div>
@@ -54,6 +56,7 @@ export default function Home() {
             <p className="group-structure">Two active sister companies <span aria-hidden="true">·</span> One planned company</p>
           </article>
         </Reveal>
+        </div>
       </section>
 
       <section className="content-section reach-section" id="reach" aria-labelledby="reach-title">

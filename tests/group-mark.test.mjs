@@ -60,9 +60,18 @@ test("the hero renders every Construction project image in its ambient carousel"
 
   assert.match(html, /class="hero-project-carousel"[^>]+aria-hidden="true"/);
   assert.match(html, /class="hero-project-carousel-row is-forward"/);
-  assert.match(html, /class="hero-project-carousel-row is-reverse"/);
+  assert.match(html, /class="hero-project-carousel-row is-offset"/);
+  assert.equal((html.match(/class="hero-project-frame"/g) ?? []).length, 20);
 
   for (const image of projectImages) {
     assert.ok(html.includes(image), `${image} should appear in the hero carousel`);
   }
+});
+
+test("the foundation section contains the fixed Group U background field", async () => {
+  const response = await waitForServer();
+  const html = await response.text();
+
+  assert.match(html, /class="group-section"[^>]+id="group"/);
+  assert.match(html, /class="group-brand-watermark"[^>]+aria-hidden="true"/);
 });

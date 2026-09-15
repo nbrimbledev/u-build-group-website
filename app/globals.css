@@ -151,8 +151,8 @@ a, button { -webkit-tap-highlight-color: transparent; }
   z-index: 2;
   inset: 0;
   background:
-    linear-gradient(90deg, rgb(233 237 242 / 94%) 0%, rgb(239 243 247 / 84%) 38%, rgb(239 243 247 / 48%) 68%, rgb(229 235 241 / 62%) 100%),
-    linear-gradient(180deg, rgb(232 237 242 / 72%) 0%, transparent 24%, transparent 76%, rgb(229 235 241 / 76%) 100%);
+    linear-gradient(90deg, rgb(233 237 242 / 88%) 0%, rgb(239 243 247 / 76%) 38%, rgb(239 243 247 / 38%) 68%, rgb(229 235 241 / 52%) 100%),
+    linear-gradient(180deg, rgb(232 237 242 / 62%) 0%, transparent 24%, transparent 76%, rgb(229 235 241 / 68%) 100%);
 }
 .hero-project-carousel-row {
   min-width: 0;
@@ -162,17 +162,13 @@ a, button { -webkit-tap-highlight-color: transparent; }
   width: max-content;
   display: flex;
   transform: translate3d(0, 0, 0);
-  animation: hero-projects-forward 62s linear infinite;
+  animation: hero-projects-forward 66s linear infinite;
   animation-play-state: paused;
-  will-change: transform;
-}
-.hero-project-carousel-row.is-reverse .hero-project-carousel-track {
-  transform: translate3d(-50%, 0, 0);
-  animation-name: hero-projects-reverse;
-  animation-duration: 70s;
+  backface-visibility: hidden;
 }
 .hero-project-carousel[data-running="true"] .hero-project-carousel-track {
   animation-play-state: running;
+  will-change: transform;
 }
 .hero-project-carousel-sequence {
   display: flex;
@@ -181,7 +177,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
 }
 .hero-project-frame {
   position: relative;
-  width: clamp(220px, 22vw, 380px);
+  width: clamp(220px, 22vw, 500px);
   aspect-ratio: 16 / 10;
   flex: 0 0 auto;
   overflow: hidden;
@@ -196,17 +192,12 @@ a, button { -webkit-tap-highlight-color: transparent; }
   height: calc(100% - 12px) !important;
   border-radius: 12px;
   object-fit: cover;
-  opacity: .46;
-  filter: saturate(.72) contrast(.92);
+  opacity: .62;
 }
 .hero-project-frame img.is-lower-focus { object-position: center 62%; }
 
 @keyframes hero-projects-forward {
   to { transform: translate3d(-50%, 0, 0); }
-}
-
-@keyframes hero-projects-reverse {
-  to { transform: translate3d(0, 0, 0); }
 }
 
 .portfolio-hero-copy { position: relative; z-index: 2; max-width: 900px; }
@@ -354,6 +345,28 @@ a, button { -webkit-tap-highlight-color: transparent; }
 }
 .company-band[href]:hover .company-band-action svg { transform: translate(3px, -3px); }
 
+.group-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.group-brand-watermark {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  opacity: .055;
+  background-image: url("/brand/u-mark-blue.svg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right 7vw center;
+  background-size: min(66vw, 900px) auto;
+}
+.group-section-content {
+  position: relative;
+  z-index: 1;
+  padding-bottom: clamp(92px, 10vw, 138px);
+}
 .content-section {
   width: min(1180px, calc(100% - 64px));
   margin-inline: auto;
@@ -568,8 +581,8 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .hero-project-carousel { gap: 12px; }
   .hero-project-carousel::after {
     background:
-      linear-gradient(180deg, rgb(235 240 244 / 90%) 0%, rgb(235 240 244 / 72%) 56%, rgb(228 234 240 / 62%) 100%),
-      linear-gradient(90deg, rgb(235 240 244 / 84%) 0%, transparent 100%);
+      linear-gradient(180deg, rgb(235 240 244 / 84%) 0%, rgb(235 240 244 / 64%) 56%, rgb(228 234 240 / 54%) 100%),
+      linear-gradient(90deg, rgb(235 240 244 / 76%) 0%, transparent 100%);
   }
   .hero-project-frame { width: clamp(180px, 56vw, 250px); padding: 5px; }
   .hero-project-frame img {
@@ -593,6 +606,12 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .company-band-copy > span { font-size: .9rem; }
   .company-band-action { grid-column: 1 / -1; justify-content: space-between; padding-top: 16px; border-top: 1px solid currentColor; }
   .content-section { width: calc(100% - 36px); padding-top: 82px; }
+  .group-brand-watermark {
+    opacity: .045;
+    background-position: center 28%;
+    background-size: 112vw auto;
+  }
+  .group-section-content { width: 100%; padding-inline: 18px; padding-bottom: 82px; }
   .group-intro h2, .section-heading h2 { font-size: clamp(2.8rem, 13vw, 4.4rem); }
   .statistics-grid, .footer-grid { grid-template-columns: 1fr; }
   .group-foundation { grid-template-columns: 1fr; margin-top: 54px; }
@@ -619,5 +638,5 @@ a, button { -webkit-tap-highlight-color: transparent; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
   .hero-project-carousel-track { animation: none !important; transform: translate3d(-6%, 0, 0); will-change: auto; }
-  .hero-project-carousel-row.is-reverse .hero-project-carousel-track { transform: translate3d(-24%, 0, 0); }
+  .hero-project-carousel-row.is-offset .hero-project-carousel-track { transform: translate3d(-24%, 0, 0); }
 }
