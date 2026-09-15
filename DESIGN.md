@@ -145,9 +145,9 @@ The palette combines a cool neutral foundation with one parent navy and distinct
 - **Slate Copy** (`#53616c`): Supporting paragraphs and secondary explanations.
 **The Division Colour Rule.** Foundation Navy belongs to the parent brand; blue and teal identify the Construction and Developments routes. Everett green appears on the Everett route hover and its map locations. Division accents should guide selection rather than flood supporting sections.
 
-**The Signature Mark Rule.** The hero uses the three-building silhouette alone, filled with the navy sampled from the U Build Construction logo. The segmented bar above the company routes uses Construction Blue, Foundation Navy and Properties Teal.
+**The Signature Mark Rule.** The hero uses the three-building silhouette alone, filled with the navy sampled from the U Build Construction logo. The hero ends cleanly without a decorative division-colour strip.
 
-**The Project Film Rule.** Every current U Build Construction project image appears in both ambient hero tracks. The rows use offset sequences and move at the same speed so matching photographs stay separated. A mineral veil keeps the photography secondary to the headline and Group symbol. The loop is decorative, pauses outside the viewport, and becomes a still composition when reduced motion is requested.
+**The Project Film Rule.** Every current U Build Construction project image appears in both ambient hero tracks. The rows use offset sequences and counter-move for visual contrast. Matching photographs begin far apart, though they may cross during the loop. A mineral veil keeps the photography secondary to the headline and Group symbol. The loop is decorative, pauses outside the viewport, and becomes a still composition when reduced motion is requested.
 
 **The Foundation Watermark Rule.** The Group U sits as a fixed, low-opacity background field through the shared-foundation section and the Manitoba map introduction. It clips at the map’s top edge so the map itself remains clear.
 

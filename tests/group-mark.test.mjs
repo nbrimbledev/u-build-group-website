@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { spawn } from "node:child_process";
+import { readFile } from "node:fs/promises";
 import { after, test } from "node:test";
 
 const port = 43199;
@@ -60,12 +61,21 @@ test("the hero renders every Construction project image in its ambient carousel"
 
   assert.match(html, /class="hero-project-carousel"[^>]+aria-hidden="true"/);
   assert.match(html, /class="hero-project-carousel-row is-forward"/);
-  assert.match(html, /class="hero-project-carousel-row is-offset"/);
+  assert.match(html, /class="hero-project-carousel-row is-reverse"/);
   assert.equal((html.match(/class="hero-project-frame"/g) ?? []).length, 20);
 
   for (const image of projectImages) {
     assert.ok(html.includes(image), `${image} should appear in the hero carousel`);
   }
+});
+
+test("the hero uses the supplied Developments logo without the coloured footer strip", async () => {
+  const logo = await readFile("public/brand/u-build-developments-logo-2026.png");
+  const stylesheet = await readFile("app/globals.css", "utf8");
+
+  assert.equal(logo.readUInt32BE(16), 1600);
+  assert.equal(logo.readUInt32BE(20), 800);
+  assert.doesNotMatch(stylesheet, /\.portfolio-hero::before/);
 });
 
 test("the fixed Group U background continues from the foundation through the map introduction", async () => {

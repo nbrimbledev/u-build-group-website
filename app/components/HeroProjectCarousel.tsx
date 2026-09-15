@@ -57,7 +57,7 @@ export function HeroProjectCarousel() {
     >
       {rows.map((images, rowIndex) => (
         <div
-          className={`hero-project-carousel-row ${rowIndex === 0 ? "is-forward" : "is-offset"}`}
+          className={`hero-project-carousel-row ${rowIndex === 0 ? "is-forward" : "is-reverse"}`}
           key={rowIndex}
         >
           <div className="hero-project-carousel-track">

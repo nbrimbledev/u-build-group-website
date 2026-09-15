@@ -118,23 +118,6 @@ a, button { -webkit-tap-highlight-color: transparent; }
     linear-gradient(135deg, #e4e9ee 0%, #f7f9fb 68%, #dce3e9 100%);
 }
 
-.portfolio-hero::before {
-  content: "";
-  position: absolute;
-  z-index: -2;
-  inset: auto 0 0;
-  height: 12px;
-  background: linear-gradient(
-    90deg,
-    var(--construction) 0%,
-    var(--construction-bright) 33.333%,
-    var(--navy) 33.333%,
-    var(--navy) 66.666%,
-    var(--properties) 66.666%,
-    var(--properties-bright) 100%
-  );
-}
-
 .hero-project-carousel {
   position: absolute;
   z-index: 0;
@@ -165,6 +148,11 @@ a, button { -webkit-tap-highlight-color: transparent; }
   animation: hero-projects-forward 66s linear infinite;
   animation-play-state: paused;
   backface-visibility: hidden;
+}
+.hero-project-carousel-row.is-reverse .hero-project-carousel-track {
+  transform: translate3d(-50%, 0, 0);
+  animation-name: hero-projects-reverse;
+  animation-duration: 70s;
 }
 .hero-project-carousel[data-running="true"] .hero-project-carousel-track {
   animation-play-state: running;
@@ -198,6 +186,10 @@ a, button { -webkit-tap-highlight-color: transparent; }
 
 @keyframes hero-projects-forward {
   to { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes hero-projects-reverse {
+  to { transform: translate3d(0, 0, 0); }
 }
 
 .portfolio-hero-copy { position: relative; z-index: 2; max-width: 900px; }
@@ -652,5 +644,5 @@ a, button { -webkit-tap-highlight-color: transparent; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
   .hero-project-carousel-track { animation: none !important; transform: translate3d(-6%, 0, 0); will-change: auto; }
-  .hero-project-carousel-row.is-offset .hero-project-carousel-track { transform: translate3d(-24%, 0, 0); }
+  .hero-project-carousel-row.is-reverse .hero-project-carousel-track { transform: translate3d(-24%, 0, 0); }
 }
