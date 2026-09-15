@@ -68,10 +68,12 @@ test("the hero renders every Construction project image in its ambient carousel"
   }
 });
 
-test("the foundation section contains the fixed Group U background field", async () => {
+test("the fixed Group U background continues from the foundation through the map introduction", async () => {
   const response = await waitForServer();
   const html = await response.text();
 
   assert.match(html, /class="group-section"[^>]+id="group"/);
-  assert.match(html, /class="group-brand-watermark"[^>]+aria-hidden="true"/);
+  assert.equal((html.match(/class="group-brand-watermark"[^>]+aria-hidden="true"/g) ?? []).length, 2);
+  assert.match(html, /class="reach-heading-field"/);
+  assert.match(html, /class="content-section reach-map-content"/);
 });

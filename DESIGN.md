@@ -149,7 +149,7 @@ The palette combines a cool neutral foundation with one parent navy and distinct
 
 **The Project Film Rule.** Every current U Build Construction project image appears in both ambient hero tracks. The rows use offset sequences and move at the same speed so matching photographs stay separated. A mineral veil keeps the photography secondary to the headline and Group symbol. The loop is decorative, pauses outside the viewport, and becomes a still composition when reduced motion is requested.
 
-**The Foundation Watermark Rule.** The Group U sits as a fixed, low-opacity background field through the shared-foundation section. It ends before the Manitoba map so the two sections remain visually distinct.
+**The Foundation Watermark Rule.** The Group U sits as a fixed, low-opacity background field through the shared-foundation section and the Manitoba map introduction. It clips at the map’s top edge so the map itself remains clear.
 
 ## Typography
 
