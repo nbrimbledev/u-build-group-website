@@ -50,6 +50,7 @@ typography:
     lineHeight: 1.2
     letterSpacing: "0.035em"
 rounded:
+  inset: "12px"
   compact: "18px"
   tile: "20px"
   card: "22px"
@@ -105,7 +106,7 @@ components:
 
 U Build Group feels like a composed parent organization that houses distinct companies under one credible structure. Cool mineral fields, deep navy anchors, and broad horizontal routes create a grounded contemporary character. The company colours remain recognizable, but the Group controls how strongly they appear.
 
-The system relies on generous scale and direct hierarchy rather than construction-site motifs. A large three-building silhouette in Construction Navy is the expressive hero signature. Supporting content stays quiet so prospective clients and community representatives can choose a company without distraction.
+The system relies on generous scale and direct hierarchy rather than construction-site motifs. A large three-building silhouette in Construction Navy sits over two softly framed project-film tracks, forming the expressive hero signature. Supporting content stays quiet so prospective clients and community representatives can choose a company without distraction.
 
 **Key Characteristics:**
 
@@ -145,6 +146,8 @@ The palette combines a cool neutral foundation with one parent navy and distinct
 **The Division Colour Rule.** Foundation Navy belongs to the parent brand; blue and teal identify the Construction and Developments routes. Everett green appears on the Everett route hover and its map locations. Division accents should guide selection rather than flood supporting sections.
 
 **The Signature Mark Rule.** The hero uses the three-building silhouette alone, filled with the navy sampled from the U Build Construction logo. The segmented bar above the company routes uses Construction Blue, Foundation Navy and Properties Teal.
+
+**The Project Film Rule.** Every current U Build Construction project image may appear in the two ambient hero tracks. The order changes between visits, the rows move in opposite directions, and a mineral veil keeps the photography secondary to the headline and Group symbol. The loop is decorative, pauses outside the viewport, and becomes a still composition when reduced motion is requested.
 
 ## Typography
 

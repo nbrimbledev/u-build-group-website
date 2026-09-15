@@ -3,6 +3,7 @@
 import { useMemo, useRef } from "react";
 import Image from "next/image";
 import { motion, useMotionValue, useReducedMotion, useSpring } from "motion/react";
+import { HeroProjectCarousel } from "./HeroProjectCarousel";
 
 const companies = [
   {
@@ -89,6 +90,7 @@ export function DivisionGateway() {
       </header>
 
       <div className="portfolio-hero" id="top">
+        <HeroProjectCarousel />
         <div className="portfolio-hero-copy">
           <h1 id="gateway-title">Manitoba companies, working from one foundation.</h1>
           <span>Choose the company whose focus fits your location and project.</span>

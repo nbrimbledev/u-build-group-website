@@ -63,6 +63,7 @@ The Group does not use its own inquiry form. Shared office contact details remai
 - U Build Construction Division logo: `public/brand/u-build-construction-logo.png`
 - U Build Developments logo: `public/brand/u-build-developments-logo-2026.png`
 - U Build Construction Division statistics: `app/site-data.ts`
+- U Build Construction Division project imagery used as a quiet hero backdrop: `public/project-carousel/`
 - A Manitoba service-area map is available at `public/manitoba-map.html`.
 - U Build Developments owns the commercial building at 9158 Quarry Road, Stony Mountain, Manitoba R0C 3A0. Current tenants are Tim Hortons, Esso and Stony Mountain Convenience.
 

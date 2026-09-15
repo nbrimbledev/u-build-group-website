@@ -46,3 +46,23 @@ test("the Group U SVG is used throughout the rendered site", async () => {
   assert.match(markResponse.headers.get("content-type") ?? "", /image\/svg\+xml/);
   assert.match(await markResponse.text(), /viewBox="0 0 1000 1000"/);
 });
+
+test("the hero renders every Construction project image in its ambient carousel", async () => {
+  const response = await waitForServer();
+  const html = await response.text();
+  const projectImages = [
+    "coop-academy-pharmacy.webp",
+    "hero.jpg",
+    "kelsey-estates.webp",
+    "stony-mountain-commercial-rental-units.webp",
+    "west-hawk-lake.webp",
+  ];
+
+  assert.match(html, /class="hero-project-carousel"[^>]+aria-hidden="true"/);
+  assert.match(html, /class="hero-project-carousel-row is-forward"/);
+  assert.match(html, /class="hero-project-carousel-row is-reverse"/);
+
+  for (const image of projectImages) {
+    assert.ok(html.includes(image), `${image} should appear in the hero carousel`);
+  }
+});
