@@ -9,3 +9,5 @@ At rest, route bands use quiet backgrounds. Construction turns blue on hover, wh
 The Manitoba map uses blue Construction markers, green Everett markers, and teal Developments markers. It lists selected locations, not service boundaries. Preserve a text list and a fallback if the interactive tiles fail. On narrow screens, keep the map visible and place the legend where it can be read without covering locations.
 
 Use Space Grotesk headings and Archivo copy, with sentence-case language. The footer stays Foundation navy. Check keyboard focus, mobile wrapping, and logo readability whenever the company gateway changes.
+
+The Group section closes with a Foundation navy core-competencies band. Driven, Ethical and Dependable are Group-wide standards. Set each competency word in Construction Sky, continue its statement in white and place the shortened explanation below. Keep the three columns editorial rather than presenting them as separate cards.

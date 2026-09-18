@@ -222,6 +222,13 @@ Full-width company bands and the translucent header stay square. Fine navy rules
 - **Surface:** Transparent over the page field so the section reads as narrative rather than a service-card grid.
 - **Responsive treatment:** The columns stack below 700px and use a horizontal rule instead of the desktop divider.
 
+### Core Competencies
+
+- **Role:** Close the Group story with the three standards shared across every U Build Group company: Driven, Ethical and Dependable.
+- **Surface:** Foundation Navy with the competency word in Construction Sky and its supporting phrase in white. Keep the band clear of additional marks because the Group U already appears in the surrounding page field.
+- **Structure:** A section heading followed by three editorial columns separated by fine light rules. Each column pairs the proposal-derived statement with one short public-facing explanation.
+- **Responsive treatment:** The columns stack below 700px and use horizontal rules. Keep the competency word and its white phrase together as one heading.
+
 ### Statistics
 
 - **Shape:** 20px corners with a minimum height of 132px.

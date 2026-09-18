@@ -56,6 +56,29 @@ export default function Home() {
               <p className="group-structure">Two active sister companies <span aria-hidden="true">·</span> One planned company</p>
             </article>
           </Reveal>
+
+          <Reveal>
+            <section className="core-competencies" aria-labelledby="core-competencies-title">
+              <div className="core-competencies-heading">
+                <h3 id="core-competencies-title">Core competencies.</h3>
+                <p>The standards shared across U Build Group.</p>
+              </div>
+              <div className="core-competencies-grid">
+                <article>
+                  <h4><span>Driven</span> in how we approach the work.</h4>
+                  <p>We take initiative, solve problems early and keep the work moving.</p>
+                </article>
+                <article>
+                  <h4><span>Ethical</span> in how we conduct ourselves.</h4>
+                  <p>We communicate openly and make decisions with honesty, fairness and integrity.</p>
+                </article>
+                <article>
+                  <h4><span>Dependable</span> in what we deliver.</h4>
+                  <p>We arrive prepared, honour our commitments and consistently deliver on expectations.</p>
+                </article>
+              </div>
+            </section>
+          </Reveal>
         </div>
       </section>
 
