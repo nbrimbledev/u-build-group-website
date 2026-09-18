@@ -85,6 +85,7 @@ export function DivisionGateway() {
         <nav aria-label="Main navigation">
           <a href="#group">The group</a>
           <a href="#reach">Where we operate</a>
+          <a href="/team">Meet the team</a>
         </nav>
         <a className="portfolio-phone" href="tel:+12049771956">(204) 977-1956</a>
       </header>

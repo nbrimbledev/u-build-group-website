@@ -178,6 +178,8 @@ At 980px, navigation is simplified, company actions wrap beneath their copy, and
 
 **The Full-Width Route Rule.** Company selection bands span the page and retain square outer edges. Rounded cards belong to supporting information, not the primary routing structure.
 
+**The Panoramic Team Banner Rule.** Group portraits keep their full panoramic composition at every viewport. On narrow screens, the banner extends through the 18px page gutters and remains fully visible rather than being cropped into a mobile aspect ratio.
+
 ## Elevation & Depth
 
 The system uses restrained ambient depth. Cool tonal layers establish most separation, while diffuse navy shadows lift only the hero artwork, company icon frames, and the Manitoba map. Company bands, navigation, and the Group editorial remain flat at rest.
@@ -195,6 +197,8 @@ The system uses restrained ambient depth. Cool tonal layers establish most separ
 Supporting objects use generous, softly rounded corners. Statistic tiles use 20px radii, icon frames use 24px, and the map uses 28px. The Group editorial uses square ruled edges. The building silhouette introduces the system's sharp architectural geometry.
 
 Full-width company bands and the translucent header stay square. Fine navy rules at 13% opacity divide major structural areas without producing a technical drawing aesthetic.
+
+**The Shared Image Frame Rule.** Team portraits and group photography reuse the project-image frame language: a 6px light inset, an 18px outer corner, a 12px inner image corner, and a restrained navy shadow. Preserve supplied portrait crops inside the frame.
 
 ## Components
 
@@ -231,6 +235,16 @@ Full-width company bands and the translucent header stay square. Fine navy rules
 - **Meaning:** The map shows selected communities and project locations, not formal service boundaries.
 - **Responsive treatment:** The interactive map remains visible at every viewport. It uses a fluid height on tablet and mobile, moves the company key below the map on narrow phones, and refits its Manitoba locations when the viewport changes. Three concise company-focus summaries appear below 900px and stack below 700px.
 
+### Team Photography
+
+- **Identity:** Pair each portrait with the person’s confirmed name and role. Mark missing information honestly instead of inferring it, and do not synthesize or substitute portraits for real staff.
+
+**The Staff Photography Provenance Rule.** Use supplied U Build staff photography. Keep optimized website copies in `public/team/` and record source paths, export settings, and embedded provenance metadata in `frontend/team-photography.md`.
+
+**The Accessible Team Motion Rule.** If a roster moves automatically on desktop, provide a visible pause or resume control and pause it on hover or keyboard focus. Use manual horizontal snap-scrolling on narrow screens and whenever reduced motion is requested. Hide duplicated loop content from assistive technology.
+
+**The Team Grid Rule.** The permanent team page uses a static responsive grid. Brody and Richard occupy the first two positions; the remaining staff follow in a fixed mixed order. The carousel implementation remains dormant in code as a backup concept and is not exposed in public navigation.
+
 ### Footer
 
 - **Surface:** Foundation Navy with Cool Paper text and pale blue headings.
@@ -244,7 +258,8 @@ Full-width company bands and the translucent header stay square. Fine navy rules
 - **Do** let company colours identify destinations and interaction states.
 - **Do** keep all company icon frames equal in size within the same breakpoint.
 - **Do** use sentence-case Space Grotesk headings over restrained Archivo copy.
-- **Do** preserve reduced-motion behavior for reveal and hero-building cursor movement.
+- **Do** preserve reduced-motion behavior for reveals, hero-building cursor movement, and any automated team roster.
+- **Do** preserve the full group panorama on narrow screens.
 - **Do** keep Group-level content concise enough that company routes remain the primary action.
 
 ### Don't:

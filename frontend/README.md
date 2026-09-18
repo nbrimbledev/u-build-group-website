@@ -6,6 +6,7 @@ Use this folder for work on the U Build Group website. It records the current si
 - [Typography](typography.md) records the Space Grotesk and Archivo pairing used on the site.
 - [Marks and favicons](marks-and-favicons.md) identifies the actual image files and their roles.
 - [Interface rules](interface.md) covers the hero, company routes, map, motion, and responsive behaviour.
+- [Team photography](team-photography.md) records the source and web transformations for the staff images used by the team page.
 
 The code wins if a value in these pages drifts. Check [`app/globals.css`](../app/globals.css) for CSS values, [`app/layout.tsx`](../app/layout.tsx) for fonts and favicon metadata, and [`app/components/DivisionGateway.tsx`](../app/components/DivisionGateway.tsx) for the company gateway. [`DESIGN.md`](../DESIGN.md) has additional design context. Older generated design-tool files are intentionally excluded from this repository because they describe an earlier palette.
 
