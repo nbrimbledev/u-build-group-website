@@ -170,12 +170,6 @@ export default function Home() {
             <strong className="footer-brand">U Build Group</strong>
           </div>
           <div>
-            <h2>Companies</h2>
-            <a href="https://www.ubuildconstruction.ca" target="_blank" rel="noopener noreferrer">U Build Construction Division</a>
-            <a href="https://www.everettconstructiongroup.ca/" target="_blank" rel="noopener noreferrer">Everett Construction Group</a>
-            <span>U Build Developments</span>
-          </div>
-          <div>
             <h2>Shared office</h2>
             <a href={sharedOffice.phoneHref}>{sharedOffice.phone}</a>
             <a href={sharedOffice.emailHref}>{sharedOffice.email}</a>

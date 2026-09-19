@@ -207,7 +207,7 @@ Full-width company bands and the translucent header stay square. Fine navy rules
 - **Structure:** A 78px translucent Cool Paper header with a single-colour brand cluster, two compact anchors, and a blue phone link.
 - **Targets:** Interactive items provide at least 44px of height.
 - **State:** Links shift toward Construction Blue on hover; all keyboard focus uses a 3px Construction Sky outline with a 4px offset.
-- **Responsive treatment:** The two section anchors hide below 980px while the phone link remains available.
+- **Responsive treatment:** Below 980px, the section links become a second-row three-tab strip with shorter mobile labels. The Team destination remains visible rather than disappearing with the desktop navigation.
 
 ### Company Route Bands
 
@@ -255,7 +255,7 @@ Full-width company bands and the translucent header stay square. Fine navy rules
 ### Footer
 
 - **Surface:** Foundation Navy with Cool Paper text and pale blue headings.
-- **Structure:** Four columns collapse to two at 980px and one at 700px.
+- **Structure:** Brand, shared-office details and social links use three columns, then collapse at smaller widths. Company links are not repeated because the full-width company gateway already owns that task.
 - **State:** Links brighten to white on hover and keep generous touch height.
 
 ## Do's and Don'ts

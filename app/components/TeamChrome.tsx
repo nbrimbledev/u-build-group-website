@@ -14,7 +14,10 @@ export function TeamHeader() {
       <nav className="team-primary-nav" aria-label="Main navigation">
         <a href="/#companies">Companies</a>
         <a href="/#group">The group</a>
-        <a href="/#reach">Where we operate</a>
+        <a href="/#reach">
+          <span className="desktop-nav-label">Where we operate</span>
+          <span className="mobile-nav-label">Locations</span>
+        </a>
       </nav>
       <a className="team-home-link" href="/">Group home</a>
     </header>

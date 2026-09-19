@@ -102,6 +102,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
 }
 .portfolio-header nav a:hover { color: var(--construction); }
 .portfolio-phone { margin-left: 10px; color: var(--construction); }
+.mobile-nav-label { display: none; }
 
 .portfolio-hero {
   position: relative;
@@ -122,6 +123,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
   position: absolute;
   z-index: 0;
   inset: 0;
+  contain: paint;
   display: grid;
   align-content: center;
   gap: clamp(14px, 1.5vw, 22px);
@@ -575,7 +577,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .section-heading h2 { max-width: 12ch; }
 
 .site-footer { padding: 72px max(32px, calc((100vw - 1180px) / 2)) 28px; background: var(--navy); color: var(--paper); }
-.footer-grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr .7fr; gap: 42px; padding-bottom: 42px; border-bottom: 1px solid rgb(247 249 251 / 18%); }
+.footer-grid { display: grid; grid-template-columns: 1.25fr 1fr .7fr; gap: 42px; padding-bottom: 42px; border-bottom: 1px solid rgb(247 249 251 / 18%); }
 .footer-grid > div { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
 .footer-grid img { margin-bottom: 8px; object-fit: contain; }
 .footer-brand { font-family: var(--font-heading), sans-serif; font-size: 1.45rem; font-weight: 600; }
@@ -586,7 +588,20 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 23px; color: rgb(247 249 251 / 68%); font-size: .76rem; }
 
 @media (max-width: 980px) {
-  .portfolio-header nav { display: none; }
+  .portfolio-header { flex-wrap: wrap; }
+  .portfolio-header nav {
+    order: 3;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin: 0;
+    padding-top: 8px;
+    border-top: 1px solid var(--rule);
+  }
+  .portfolio-header nav a { justify-content: center; text-align: center; }
+  .desktop-nav-label { display: none; }
+  .mobile-nav-label { display: inline; }
   .portfolio-phone { margin-left: auto; }
   .portfolio-hero { grid-template-columns: 1.05fr .95fr; }
   .company-band { grid-template-columns: 176px 1fr; }
@@ -637,7 +652,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
 }
 
 @media (max-width: 700px) {
-  .portfolio-header { padding-inline: 18px; }
+  .portfolio-header { gap: 12px; padding-inline: 18px; }
   .portfolio-brand { font-size: 1.08rem; }
   .portfolio-phone { font-size: .76rem; }
   .portfolio-hero { min-height: 0; align-items: center; padding: 42px 18px 34px; }
@@ -700,6 +715,13 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .division-record-heading a { white-space: normal; }
   .site-footer { padding: 58px 18px 24px; }
   .footer-bottom { flex-direction: column; }
+}
+
+@media (max-width: 360px) {
+  .company-band { grid-template-columns: 96px minmax(0, 1fr); gap: 14px; }
+  .company-icon-frame { width: 96px; height: 72px; }
+  .company-icon-frame img { width: 88px; height: 58px; }
+  .company-band-copy strong { font-size: 1.55rem; }
 }
 
 @media (max-height: 520px) and (orientation: landscape) {
@@ -943,14 +965,23 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .team-footer-contact a:hover { color: white; text-decoration: underline; text-underline-offset: 5px; }
 
 @media (max-width: 980px) {
-  .team-primary-nav { display: none; }
+  .team-site-header { grid-template-columns: 1fr auto; }
+  .team-site-header .portfolio-brand { grid-column: 1; }
+  .team-home-link { grid-column: 2; grid-row: 1; }
+  .team-primary-nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-column: 1 / -1;
+    gap: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--rule);
+  }
+  .team-primary-nav a { justify-content: center; text-align: center; }
   .team-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 @media (max-width: 760px) {
-  .team-site-header { grid-template-columns: 1fr auto; }
-  .team-site-header .portfolio-brand { grid-column: 1; }
-  .team-home-link { grid-column: 2; grid-row: 1; }
   .team-hero,
   .team-section-heading { width: calc(100% - 36px); }
   .team-hero-copy,

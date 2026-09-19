@@ -6,6 +6,8 @@ The three-building hero symbol uses `#082B54` and follows the mouse with bounded
 
 At rest, route bands use quiet backgrounds. Construction turns blue on hover, while Everett turns deep green on hover. Developments remains visibly pending rather than acting as a link. Keep all three logo frames the same size at each breakpoint.
 
+On tablet and mobile, keep the Group, Locations and Team destinations visible in a second header row with touch-sized targets. Do not hide the only path to the team page. The footer carries the Group identity, shared office and social links; it does not repeat the company directory already shown in the gateway.
+
 The Manitoba map uses blue Construction markers, green Everett markers, and teal Developments markers. It lists selected locations, not service boundaries. Preserve a text list and a fallback if the interactive tiles fail. On narrow screens, keep the map visible and place the legend where it can be read without covering locations.
 
 Use Space Grotesk headings and Archivo copy, with sentence-case language. The footer stays Foundation navy. Check keyboard focus, mobile wrapping, and logo readability whenever the company gateway changes.
