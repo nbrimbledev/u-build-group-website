@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { sharedOffice } from "../site-data";
 
-export function TeamHeader() {
+export function TeamHeader({ active = "team" }: { active?: "team" | "gallery" }) {
   return (
     <header className="team-site-header">
       <a className="portfolio-brand" href="/" aria-label="U Build Group home">
@@ -18,6 +18,7 @@ export function TeamHeader() {
           <span className="desktop-nav-label">Where we operate</span>
           <span className="mobile-nav-label">Locations</span>
         </a>
+        <a href={active === "gallery" ? "/team" : "/gallery"}>{active === "gallery" ? "Team" : "Gallery"}</a>
       </nav>
       <a className="team-home-link" href="/">Group home</a>
     </header>

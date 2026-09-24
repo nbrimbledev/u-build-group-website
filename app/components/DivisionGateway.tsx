@@ -92,6 +92,7 @@ export function DivisionGateway() {
             <span className="desktop-nav-label">Meet the team</span>
             <span className="mobile-nav-label">Team</span>
           </a>
+          <a href="/gallery">Gallery</a>
         </nav>
         <a className="portfolio-phone" href="tel:+12049771956">(204) 977-1956</a>
       </header>

@@ -18,3 +18,7 @@ Run `npm test`, `npm run lint`, and `npx next build` before publishing. The loca
 The existing Vercel project `u-build-group` is connected to this repository. Pushes to `main` trigger production deployments. Other branches can produce previews. The site is configured for the `ubuildgroup.ca` domain.
 
 Local environment files, build output, and Vercel project linkage are excluded by `.gitignore`. Do not commit credentials or customer information.
+
+## Gallery
+
+The Group gallery and homepage reel share a collection that always retains the original five photos. See [Gallery setup](docs/gallery-setup.md) for OneDrive publishing and administrator activation.

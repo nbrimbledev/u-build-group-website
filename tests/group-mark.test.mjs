@@ -1,3 +1,4 @@
+import { load } from "cheerio";
 import assert from "node:assert/strict";
 import { spawn } from "node:child_process";
 import { readFile } from "node:fs/promises";
@@ -62,7 +63,21 @@ test("the hero renders every Construction project image in its ambient carousel"
   assert.match(html, /class="hero-project-carousel"[^>]+aria-hidden="true"/);
   assert.match(html, /class="hero-project-carousel-row is-forward"/);
   assert.match(html, /class="hero-project-carousel-row is-reverse"/);
-  assert.equal((html.match(/class="hero-project-frame"/g) ?? []).length, 20);
+  const construction = JSON.parse(await readFile("app/data/construction-projects.json", "utf8"));
+  const originalUrls = new Set(projectImages.map((name) => `https://www.ubuildconstruction.ca/projects/${name}`));
+  const additional = construction.filter((photo) => !originalUrls.has(photo.sourceUrl));
+  const synced = JSON.parse(await readFile("app/data/gallery-synced.json", "utf8"));
+  const heroAdditions = synced.filter(photo => photo.featured);
+  assert.equal((html.match(/class="hero-project-frame"/g) ?? []).length, (projectImages.length + additional.length + heroAdditions.length) * 2);
+  for (const photo of additional) {
+    assert.ok(html.includes(photo.src.split("/").pop()), `${photo.title} from the Construction page should appear in the hero`);
+  }
+  const galleryResponse = await fetch(`${origin}/gallery`);
+  assert.equal(galleryResponse.status, 200);
+  const galleryHtml = await galleryResponse.text();
+  const gallery = load(galleryHtml);
+  const labels = gallery(".gallery-card").map((_, element) => gallery(element).attr("aria-label")).get();
+  for (const photo of additional) assert.ok(labels.includes(`Enlarge ${photo.title}`), `${photo.title} should appear in the gallery`);
 
   for (const image of projectImages) {
     assert.ok(html.includes(image), `${image} should appear in the hero carousel`);

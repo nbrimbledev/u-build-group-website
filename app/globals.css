@@ -1037,3 +1037,40 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .team-carousel-sequence > div { scroll-snap-align: start; }
   .team-carousel-sequence[aria-hidden="true"] { display: none; }
 }
+
+/* Gallery extends the soft white frames used by the Group's project reel. */
+.gallery-section { width: min(1280px, calc(100% - 64px)); margin: auto; padding: 64px 0 100px; }
+.gallery-heading { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 40px; }
+.gallery-eyebrow { color: var(--construction); font-size: .875rem; font-weight: 600; margin: 0 0 16px; }
+.gallery-heading h1 { font-family: var(--font-heading), sans-serif; font-size: clamp(2.6rem, 5vw, 4.8rem); line-height: 1; letter-spacing: -.04em; font-weight: 500; margin: 0; max-width: 12ch; }
+.gallery-heading > p { color: var(--ink-soft); max-width: 26ch; line-height: 1.6; }
+.gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px 24px; }
+.gallery-card { border: 0; padding: 0; text-align: left; background: transparent; color: inherit; font: inherit; cursor: pointer; min-width: 0; }
+.gallery-card:first-child { grid-column: 1 / -1; }
+.gallery-photo-frame { position: relative; display: block; aspect-ratio: 16 / 10; padding: 6px; border: 6px solid white; border-radius: 18px; overflow: hidden; background: var(--mineral); box-shadow: 0 12px 34px rgb(15 30 70 / 11%); }
+.gallery-card:first-child .gallery-photo-frame { aspect-ratio: 2.1; }
+.gallery-photo-frame img { object-fit: cover; transition: transform .3s; }
+.gallery-card:hover .gallery-photo-frame img { transform: scale(1.025); }
+.gallery-enlarge { position: absolute; right: 14px; bottom: 14px; display: grid; place-items: center; width: 44px; height: 44px; background: var(--navy); color: white; border-radius: 50%; font-size: 1.4rem; }
+.gallery-lightbox { width: 100vw; max-width: none; height: 100dvh; max-height: none; padding: 24px; border: 0; background: rgb(8 18 35 / 97%); color: white; }
+.gallery-lightbox::backdrop { background: var(--navy); }
+.gallery-lightbox-inner { display: flex; flex-direction: column; height: 100%; max-width: 1600px; margin: auto; }
+.gallery-lightbox-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-shrink: 0; }
+.gallery-lightbox-bar button { min-width: 44px; min-height: 48px; border: 1px solid rgb(255 255 255 / 30%); padding: 10px 16px; background: transparent; color: white; border-radius: 6px; font: inherit; cursor: pointer; }
+.gallery-lightbox-bar button:hover { background: rgb(255 255 255 / 12%); }
+.gallery-lightbox-image { position: relative; flex: 1; min-height: 0; margin: 18px 0; touch-action: pan-y pinch-zoom; }
+.gallery-lightbox-image img { object-fit: contain; }
+@media (max-width: 980px) {
+  .portfolio-header nav, .team-primary-nav { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .gallery-section { width: calc(100% - 36px); padding-top: 40px; }
+  .gallery-heading { display: block; margin-bottom: 28px; }
+  .gallery-heading > p { max-width: none; }
+  .gallery-grid { grid-template-columns: 1fr; gap: 28px; }
+  .gallery-card:first-child .gallery-photo-frame { aspect-ratio: 16 / 10; }
+  .gallery-lightbox { padding: 16px; }
+  .gallery-lightbox-bar { gap: 8px; flex-wrap: wrap; }
+  .gallery-lightbox-bar button { padding-inline: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { .gallery-photo-frame img { transition: none; } }

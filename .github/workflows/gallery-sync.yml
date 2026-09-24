@@ -1,0 +1,50 @@
+name: Sync gallery photos
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: gallery-sync
+  cancel-in-progress: false
+jobs:
+  sync:
+    if: vars.GALLERY_SYNC_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Validate deployment connection
+        env:
+          DEPLOY_HOOK: ${{ secrets.GALLERY_VERCEL_DEPLOY_HOOK }}
+        run: test -n "$DEPLOY_HOOK"
+      - name: Download and prepare approved photographs
+        run: npm run gallery:sync
+        env:
+          MS_TENANT_ID: ${{ secrets.MS_TENANT_ID }}
+          MS_CLIENT_ID: ${{ secrets.MS_CLIENT_ID }}
+          MS_CLIENT_SECRET: ${{ secrets.MS_CLIENT_SECRET }}
+          GALLERY_DRIVE_ID: ${{ vars.GALLERY_DRIVE_ID }}
+          GALLERY_FOLDER_PATH: MARKETING/Gallery
+      - name: Publish changed collection
+        env:
+          DEPLOY_HOOK: ${{ secrets.GALLERY_VERCEL_DEPLOY_HOOK }}
+        run: |
+          git add app/data/gallery-synced.json public/gallery-synced
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          npx next build
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "Update approved gallery photographs"
+          git push origin HEAD:main
+          curl --fail --silent --show-error --retry 3 -X POST "$DEPLOY_HOOK" > /dev/null

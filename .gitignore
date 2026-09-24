@@ -44,3 +44,9 @@ next-env.d.ts
 /public/_ds/
 /public/brand/ubuild-construction-frame-concept.png
 /public/brand/ubuild-construction-plan-grid-concept.png
+
+# Atomic gallery sync staging
+/.gallery-staging/
+/app/data/gallery-synced.json.tmp
+
+/app/data/construction-projects.json.tmp
