@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { LocationMap } from "./components/LocationMap";
 import { DivisionGateway } from "./components/DivisionGateway";
 import { Reveal } from "./components/Reveal";
 import {
@@ -28,7 +29,7 @@ export default function Home() {
               <div>
                 <h2 id="group-title">A shared foundation for distinct companies.</h2>
                 <p className="lead-copy">
-                  U Build Group brings together separate Manitoba sister companies with distinct mandates and a foundation shaped by hands-on leadership.
+                  U Build Group brings together U Build Construction Division and Everett Construction Group, separate sister companies serving construction projects across Manitoba.
                 </p>
               </div>
               <p className="group-intro-note">
@@ -97,11 +98,7 @@ export default function Home() {
 
         <div className="content-section reach-map-content">
           <Reveal className="map-frame service-map">
-            <iframe
-              src="/manitoba-map.html"
-              title="Selected U Build Group communities and project locations across Manitoba"
-              loading="lazy"
-            />
+            <LocationMap />
           </Reveal>
 
           <Reveal className="mobile-service-summary">

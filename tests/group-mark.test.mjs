@@ -36,7 +36,7 @@ test("the Group U SVG is used throughout the rendered site", async () => {
     "the document should declare the Group SVG as its favicon",
   );
   assert.equal((html.match(/<img[^>]+src="\/brand\/u-mark-blue\.svg"/g) ?? []).length, 2);
-  assert.ok(html.includes(`https://ubuildgroup.ca${mark}`));
+  assert.ok(html.includes(`https://www.ubuildgroup.ca${mark}`));
 
   const manifestResponse = await fetch(`${origin}/manifest.webmanifest`);
   assert.equal(manifestResponse.status, 200);
@@ -70,7 +70,7 @@ test("the hero renders every Construction project image in its ambient carousel"
   const heroAdditions = synced.filter(photo => photo.featured);
   assert.equal((html.match(/class="hero-project-frame"/g) ?? []).length, (projectImages.length + additional.length + heroAdditions.length) * 2);
   for (const photo of additional) {
-    assert.ok(html.includes(photo.src.split("/").pop()), `${photo.title} from the Construction page should appear in the hero`);
+    assert.ok(html.includes((photo.thumbnail ?? photo.src).split("/").pop()), `${photo.title} from the Construction page should appear in the hero`);
   }
   const galleryResponse = await fetch(`${origin}/gallery`);
   assert.equal(galleryResponse.status, 200);
@@ -101,4 +101,26 @@ test("the fixed Group U background continues from the foundation through the map
   assert.equal((html.match(/class="group-brand-watermark"[^>]+aria-hidden="true"/g) ?? []).length, 2);
   assert.match(html, /class="reach-heading-field"/);
   assert.match(html, /class="content-section reach-map-content"/);
+});
+
+
+test("public pages use consistent canonical and sharing URLs and expose crawlable images", async () => {
+  await waitForServer();
+  for (const route of ["/", "/team", "/gallery"]) {
+    const response = await fetch(`${origin}${route}`);
+    assert.equal(response.status, 200);
+    const $ = load(await response.text());
+    const canonical = $("link[rel=canonical]").attr("href");
+    assert.equal(new URL(canonical).hostname, "www.ubuildgroup.ca");
+    assert.equal(new URL(canonical).pathname, route);
+    assert.equal(new URL($("meta[property='og:url']").attr("content")).pathname, route);
+    assert.equal($("h1").length, 1);
+    assert.ok($("meta[name=description]").attr("content").length > 40);
+  }
+  const sitemap = await (await fetch(`${origin}/sitemap.xml`)).text();
+  assert.ok(sitemap.includes("https://www.ubuildgroup.ca/gallery"));
+  assert.ok(sitemap.includes("image:loc"));
+  assert.ok(!sitemap.includes("https://ubuildgroup.ca"));
+  const verification = await fetch(`${origin}/google62748e782535f299.html`);
+  assert.equal(await verification.text(), "google-site-verification: google62748e782535f299.html");
 });

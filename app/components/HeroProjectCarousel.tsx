@@ -81,8 +81,10 @@ export function HeroProjectCarousel() {
                 {images.map((image, imageIndex) => (
                   <span className="hero-project-frame" data-project={image.title} key={`${image.src}-${imageIndex}`}>
                     <Image
-                      src={image.src}
+                      src={image.thumbnail ?? image.src}
                       alt=""
+                      quality={60}
+                      fetchPriority="low"
                       fill
                       className={image.focus === "lower" ? "is-lower-focus" : undefined}
                       sizes="(max-width: 700px) 56vw, 22vw"

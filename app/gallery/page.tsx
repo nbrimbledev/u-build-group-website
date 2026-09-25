@@ -4,9 +4,18 @@ import { Gallery } from "../components/Gallery";
 import { galleryPhotos } from "../gallery-data";
 
 export const metadata: Metadata = {
-  title: "Gallery | U Build Group",
-  description: "Explore photographs from U Build Group projects across Manitoba.",
+  title: "Project Gallery | U Build Group",
+  description: "Explore construction project photographs from U Build Group companies across Manitoba, including completed buildings and work in progress.",
   alternates: { canonical: "/gallery" },
+  openGraph: {
+    title: "Project Gallery | U Build Group",
+    description: "Explore construction project photographs from U Build Group companies across Manitoba, including completed buildings and work in progress.",
+    url: "/gallery",
+    siteName: "U Build Group",
+    locale: "en_CA",
+    type: "website",
+  },
+  twitter: { card: "summary", title: "Project Gallery | U Build Group", description: "Explore construction project photographs from U Build Group companies across Manitoba, including completed buildings and work in progress." },
 };
 
 export default function GalleryPage() {

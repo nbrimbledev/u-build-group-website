@@ -523,7 +523,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
   background: var(--mineral);
   box-shadow: 0 16px 44px rgb(17 29 79 / 8%);
 }
-.map-frame iframe { display: block; width: 100%; height: 590px; border: 0; }
+.map-frame iframe, .map-frame .service-map-placeholder { display: block; width: 100%; height: 590px; border: 0; }
 .mobile-service-summary { display: none; }
 
 .division-record {
@@ -612,7 +612,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
 
 @media (max-width: 900px) {
   .service-map { margin-top: 36px; }
-  .service-map iframe { height: clamp(520px, 70vh, 600px); }
+  .service-map iframe, .service-map .service-map-placeholder { height: clamp(520px, 70vh, 600px); }
   .mobile-service-summary {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -725,7 +725,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
 }
 
 @media (max-height: 520px) and (orientation: landscape) {
-  .service-map iframe { height: 430px; }
+  .service-map iframe, .service-map .service-map-placeholder { height: 430px; }
 }
 
 @media (forced-colors: active) {
@@ -1074,3 +1074,5 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .gallery-lightbox-bar button { padding-inline: 12px; }
 }
 @media (prefers-reduced-motion: reduce) { .gallery-photo-frame img { transition: none; } }
+
+.service-map-placeholder { display: grid; place-items: center; width: 100%; border: 0; background: var(--mineral); color: var(--construction-navy); font: inherit; cursor: pointer; }

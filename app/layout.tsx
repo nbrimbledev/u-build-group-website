@@ -18,7 +18,7 @@ const siteDescription =
   "U Build Group brings together U Build Construction Division and Everett Construction Group, serving construction projects across Manitoba.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ubuildgroup.ca"),
+  metadataBase: new URL("https://www.ubuildgroup.ca"),
   title: "U Build Group | Manitoba Construction Companies",
   description: siteDescription,
   alternates: { canonical: "/" },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "U Build Group",
     description: siteDescription,
   },
@@ -42,10 +42,12 @@ export const metadata: Metadata = {
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://www.ubuildgroup.ca/#organization",
+  sameAs: ["https://www.instagram.com/ubuild_group/"],
   name: "U Build Group",
   description: siteDescription,
-  url: "https://ubuildgroup.ca",
-  logo: "https://ubuildgroup.ca/brand/u-mark-blue.svg",
+  url: "https://www.ubuildgroup.ca",
+  logo: "https://www.ubuildgroup.ca/brand/u-mark-blue.svg",
   telephone: "+1-204-977-1956",
   email: "info@ubuildconstruction.ca",
   address: {
