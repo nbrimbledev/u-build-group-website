@@ -14,7 +14,7 @@ export const teamMembers: readonly TeamMember[] = [
   { name: "Lucas", role: "Project Manager", image: "/team/lucas.jpg" },
   { name: "Lindsay", role: "Chief Financial Officer", image: "/team/lindsay.jpg" },
   { name: "Junior", role: "Project Manager", image: "/team/junior.jpg" },
-  { name: "Angie", role: "Accounting Manager", image: "/team/angie.jpg" },
+  { name: "Angelique", role: "Accounting Manager", image: "/team/angie.jpg" },
   { name: "Andy", role: "Chief Estimator", image: "/team/andy.jpg" },
   { name: "Connell", role: "Pre-construction Manager", image: "/team/connell.jpg" },
   { name: "Khaldon", role: "Project Manager", image: "/team/khaldon.jpg" },
