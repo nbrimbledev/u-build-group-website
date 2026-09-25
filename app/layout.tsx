@@ -14,15 +14,17 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["400", "500", "600", "700"],
 });
 
+const siteDescription =
+  "U Build Group brings together U Build Construction Division and Everett Construction Group, serving construction projects across Manitoba.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://ubuildgroup.ca"),
   title: "U Build Group | Manitoba Construction Companies",
-  description:
-    "U Build Group connects specialized construction companies serving communities across Manitoba.",
+  description: siteDescription,
   alternates: { canonical: "/" },
   openGraph: {
     title: "U Build Group",
-    description: "Specialized construction companies, working from one Manitoba office.",
+    description: siteDescription,
     url: "/",
     siteName: "U Build Group",
     locale: "en_CA",
@@ -31,7 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "U Build Group",
-    description: "Specialized construction companies, working from one Manitoba office.",
+    description: siteDescription,
   },
   icons: { icon: { url: "/brand/u-mark-blue.svg", type: "image/svg+xml", sizes: "any" } },
   manifest: "/manifest.webmanifest",
@@ -41,6 +43,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "U Build Group",
+  description: siteDescription,
   url: "https://ubuildgroup.ca",
   logo: "https://ubuildgroup.ca/brand/u-mark-blue.svg",
   telephone: "+1-204-977-1956",
