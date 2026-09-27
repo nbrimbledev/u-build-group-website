@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo, Space_Grotesk } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -77,6 +78,7 @@ export default function RootLayout({
       <body className={`${archivo.variable} ${spaceGrotesk.variable}`}>
         <a className="skip-link" href="#main-content">Skip to main content</a>
         {children}
+        <Analytics />
       </body>
     </html>
   );
