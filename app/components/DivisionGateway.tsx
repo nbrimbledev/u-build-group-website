@@ -26,7 +26,7 @@ const companies = [
   },
   {
     name: "U Build Developments",
-    type: "Future company",
+    type: "In development",
     focus: "Commercial property ownership and leasing, including 9158 Quarry Road in Stony Mountain.",
     href: null,
     accent: "properties",
