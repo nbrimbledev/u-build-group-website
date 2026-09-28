@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { SiteHeader, SiteFooter } from "../components/SiteChrome";
 import { TeamGrid } from "../components/TeamGrid";
-import { Reveal } from "../components/Reveal";
 import { teamMembers } from "../team-data";
 
 export const metadata: Metadata = {
@@ -31,13 +30,7 @@ export default function TeamPage() {
           </div>
         </section>
 
-        <section className="team-roster-section" aria-labelledby="team-roster-title">
-          <Reveal>
-            <div className="team-section-heading">
-              <h2 id="team-roster-title">Working across the group.</h2>
-              <p>Meet the shared team supporting U Build Group companies and their work throughout Manitoba.</p>
-            </div>
-          </Reveal>
+        <section className="team-roster-section" aria-label="Team members">
           {/*
             Carousel backup retained in app/components/TeamCarousel.tsx.
             To restore it, replace TeamGrid below with TeamCarousel using the same members.

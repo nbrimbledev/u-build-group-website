@@ -730,7 +730,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .team-hero {
   width: min(1180px, calc(100% - 64px));
   margin-inline: auto;
-  padding: clamp(66px, 8vw, 112px) 0 clamp(78px, 9vw, 124px);
+  padding: clamp(66px, 8vw, 112px) 0 clamp(40px, 5vw, 64px);
 }
 .team-hero-copy {
   display: grid;
@@ -772,7 +772,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
 }
 
 .team-roster-section {
-  padding: clamp(84px, 10vw, 132px) 0 clamp(100px, 12vw, 156px);
+  padding: clamp(32px, 4vw, 48px) 0 clamp(100px, 12vw, 156px);
   border-top: 1px solid var(--rule);
   background: rgb(232 237 242 / 72%);
 }
