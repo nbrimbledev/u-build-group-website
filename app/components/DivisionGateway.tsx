@@ -22,7 +22,7 @@ const companies = [
     href: "https://www.everettconstructiongroup.ca/",
     accent: "everett",
     status: "Visit company site",
-    mark: "/brand/everett-logo.svg",
+    mark: "/brand/everett-logo2.png",
   },
   {
     name: "U Build Developments",
