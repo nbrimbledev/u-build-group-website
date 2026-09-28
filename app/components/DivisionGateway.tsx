@@ -78,7 +78,7 @@ export function DivisionGateway() {
       <div className="portfolio-hero" id="top">
         <HeroProjectCarousel />
         <div className="portfolio-hero-copy">
-          <h1 id="gateway-title">Manitoba companies, working from one foundation.</h1>
+          <h1 id="gateway-title">Construction and development companies serving Manitoba.</h1>
           <span>Choose the company whose focus fits your location and project.</span>
           <a className="company-jump" href="#company-routes">
             Choose a company
