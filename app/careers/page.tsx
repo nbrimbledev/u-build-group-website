@@ -22,7 +22,7 @@ export default function CareersPage() {
           <p>One team, working across our companies. Join U Build Group and support U Build Construction Division and Everett Construction Group as project needs change.</p>
           <a className="company-jump" href="#openings">Explore open roles <span aria-hidden="true">↓</span></a>
         </div>
-        <figure><Image src="/team/group.jpg" alt="The U Build Group team together at the Stony Mountain office" width={2800} height={811} priority sizes="(max-width: 1280px) 94vw, 1180px" /></figure>
+        <figure><Image src="/team/group.jpg" alt="The U Build Group team together at the Stony Mountain office" width={7205} height={2087} quality={90} priority sizes="(max-width: 1280px) 94vw, 1180px" /></figure>
       </section>
       <CareerApplication />
     </main>

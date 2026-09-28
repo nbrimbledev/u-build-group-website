@@ -737,7 +737,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
   grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
   align-items: end;
   gap: clamp(34px, 7vw, 96px);
-  margin-bottom: clamp(40px, 6vw, 72px);
+  margin-bottom: 0;
 }
 .team-hero-copy h1 {
   max-width: 12ch;

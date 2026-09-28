@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { TeamBanner } from "../components/TeamChrome";
 import { SiteHeader, SiteFooter } from "../components/SiteChrome";
 import { TeamGrid } from "../components/TeamGrid";
 import { Reveal } from "../components/Reveal";
@@ -30,7 +29,6 @@ export default function TeamPage() {
             <h1 id="team-page-title">Meet the people behind U Build Group.</h1>
             <p>One group, built through the people who lead its companies and support their work across Manitoba.</p>
           </div>
-          <TeamBanner />
         </section>
 
         <section className="team-roster-section" aria-labelledby="team-roster-title">
