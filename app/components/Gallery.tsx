@@ -21,37 +21,44 @@ export function Gallery({ photos }: { photos: GalleryPhoto[] }) {
   }, [photos]);
   const dialog = useRef<HTMLDialogElement>(null);
   const touchStart = useRef<{ x: number; y: number } | null>(null);
-  const opener = useRef<HTMLButtonElement | null>(null);
+  const opener = useRef<HTMLAnchorElement | null>(null);
   const oldOverflow = useRef("");
+  const scrollLocked = useRef(false);
   const photo = orderedPhotos[selected];
-  const move = (direction: number) => setSelected((current) => (current + direction + photos.length) % photos.length);
+  const move = (direction: number) => setSelected((current) => (current + direction + photos.length) % (photos.length || 1));
 
-  useEffect(() => () => { document.body.style.overflow = oldOverflow.current; }, []);
+  useEffect(() => () => { if (scrollLocked.current) document.body.style.overflow = oldOverflow.current; }, []);
 
   function close() {
     dialog.current?.close();
   }
 
+  if (!photos.length) return <p className="gallery-empty">No photographs are available yet. Please check back soon.</p>;
+
   return (
     <>
       <div className="gallery-grid">
         {orderedPhotos.map((item, index) => (
-          <button key={item.id} className="gallery-card" aria-label={`Enlarge ${item.title}`} aria-haspopup="dialog" onClick={(event) => {
+          <a key={item.id} href={item.src} className="gallery-card" aria-label={`Enlarge photograph ${index + 1}: ${item.alt}`} aria-haspopup="dialog" onClick={(event) => {
+            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || !dialog.current?.showModal) return;
+            event.preventDefault();
             opener.current = event.currentTarget;
             setSelected(index);
             oldOverflow.current = document.body.style.overflow;
             document.body.style.overflow = "hidden";
+            scrollLocked.current = true;
             dialog.current?.showModal();
           }}>
             <span className="gallery-photo-frame">
-              <Image src={index === 0 ? item.src : item.thumbnail ?? item.src} alt={item.alt} fill priority={index === 0} sizes={index === 0 ? "(max-width: 600px) 92vw, (max-width: 1344px) 95vw, 1280px" : "(max-width: 600px) 92vw, (max-width: 1344px) 46vw, 628px"} style={{ objectPosition: item.focus === "lower" ? "center 70%" : undefined }} />
+              <GalleryImage src={index === 0 ? item.src : item.thumbnail ?? item.src} alt={item.alt} fill priority={index === 0} sizes={index === 0 ? "(max-width: 600px) 92vw, (max-width: 1344px) 95vw, 1280px" : "(max-width: 600px) 92vw, (max-width: 1344px) 46vw, 628px"} style={{ objectPosition: item.focus === "lower" ? "center 70%" : undefined }} />
               <span className="gallery-enlarge" aria-hidden="true">↗</span>
             </span>
-          </button>
+          </a>
         ))}
       </div>
       <dialog className="gallery-lightbox" ref={dialog} aria-label="Project photograph viewer" onClose={() => {
         document.body.style.overflow = oldOverflow.current;
+        scrollLocked.current = false;
         opener.current?.focus();
       }} onClick={(event) => { if (event.target === event.currentTarget) close(); }} onKeyDown={(event) => {
         if (event.key === "ArrowRight") { event.preventDefault(); move(1); }
@@ -66,11 +73,29 @@ export function Gallery({ photos }: { photos: GalleryPhoto[] }) {
             if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) move(dx < 0 ? 1 : -1);
             touchStart.current = null;
           }}>
-            {photo && <Image src={photo.src} alt={photo.alt} fill sizes="94vw" />}
+            {photo && <GalleryImage retry key={photo.id} src={photo.src} alt={photo.alt} fill sizes="94vw" />}
           </div>
           <div className="gallery-lightbox-bar"><button onClick={() => move(-1)} aria-label="Previous photograph">← Previous</button><button onClick={() => move(1)} aria-label="Next photograph">Next →</button></div>
         </div>
       </dialog>
     </>
   );
+}
+
+function GalleryImage({ retry = false, ...props }: React.ComponentProps<typeof Image> & { retry?: boolean }) {
+  const [failed, setFailed] = useState(false);
+  const [attempt, setAttempt] = useState(0);
+  if (failed) return (
+    <span className="gallery-image-error" role="status">
+      <span>This photograph couldn’t load.</span>
+      <span>{props.alt}</span>
+      {retry && <button type="button" onClick={(event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        setAttempt((value) => value + 1);
+        setFailed(false);
+      }}>Try again</button>}
+    </span>
+  );
+  return <Image {...props} alt={props.alt} key={attempt} onError={() => setFailed(true)} />;
 }

@@ -33,3 +33,17 @@ The page and synchronization code are implemented. The Microsoft application, re
 `npm run projects:sync` reads the public https://www.ubuildconstruction.ca/projects page, extracts all project cards, and saves optimized copies in `public/construction-projects` with their titles, descriptions and source URLs in `app/data/construction-projects.json`. It needs no Microsoft credentials. The shared collection combines these photos with the five originals and OneDrive additions. Source URLs prevent the four overlapping original photos from appearing twice. The original timber-framing image stays.
 
 Vercel deployments and `npm run build` refresh the Construction collection automatically. A source outage or unrecognized page layout uses the last complete saved collection during builds; a manual sync reports failure. This is a build-time refresh, not a live request on each visit. Updating Construction alone does not trigger a Group deployment; deploy the Group site to refresh it. The OneDrive schedule remains separately disabled pending administrator setup.
+
+## Accessible photo descriptions
+
+Gallery captions remain hidden. Screen readers use the descriptions in
+`app/data/gallery-descriptions.json`, keyed by the stable imported photo ID.
+These overrides live separately from generated manifests, so syncing or renaming
+an existing photo does not overwrite its reviewed description. Update a description
+if the image with that ID is replaced with different content.
+
+For new photos, provide a descriptive filename or an explicit `alt` value when
+calling the publishing script. Camera-style filenames get a neutral fallback
+instead of being announced as a string of numbers. Review new photographs and
+add a description override of what is visibly shown; do not infer project names
+or people's identities. These descriptions do not affect Featured selection.

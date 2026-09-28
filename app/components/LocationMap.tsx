@@ -6,7 +6,7 @@ export function LocationMap() {
   const container = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
-    if (!container.current) return;
+    if (!container.current || !("IntersectionObserver" in window)) return;
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) { setVisible(true); observer.disconnect(); }
     }, { rootMargin: "200px" });

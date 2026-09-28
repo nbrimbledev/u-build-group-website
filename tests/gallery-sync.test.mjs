@@ -30,3 +30,16 @@ test('gallery sync publishes optimized photos, reuses unchanged files, and prese
     await assert.rejects(access(path.join(root, 'public', first[0].src)));
   } finally { await rm(root, { recursive: true, force: true }); }
 });
+
+
+test('camera filenames receive readable alt text while supplied descriptions survive reuse', async () => {
+  const root = await mkdtemp(path.join(tmpdir(), 'ubuild-gallery-alt-'));
+  try {
+    const bytes = await sharp({ create: { width: 30, height: 20, channels: 3, background: '#014cbb' } }).png().toBuffer();
+    const item = { id: 'camera-photo', name: 'DJI_202609281200_001.png', eTag: 'v1' };
+    const first = await publishGallery([item], async () => bytes, root);
+    assert.equal(first[0].alt, 'Photograph from the U Build Group gallery');
+    const updated = await publishGallery([{ ...item, alt: 'Workers installing timber roof trusses.' }], async () => { throw new Error('Must reuse existing image'); }, root);
+    assert.equal(updated[0].alt, 'Workers installing timber roof trusses.');
+  } finally { await rm(root, { recursive: true, force: true }); }
+});

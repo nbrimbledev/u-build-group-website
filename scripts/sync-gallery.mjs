@@ -34,7 +34,7 @@ export async function publishGallery(items, download, root = process.cwd(), coll
       const version = item.eTag ?? item.lastModifiedDateTime;
       const old = previous.find((photo) => photo.id === id && photo.version === version && version);
       const title = item.title ?? photoTitle(item.name);
-      const description = { title, alt: item.alt ?? title, featured: item.featured, ...(item.sourceUrl ? { sourceUrl: item.sourceUrl } : {}) };
+      const description = { title, alt: item.alt?.trim() || (/^(?:DJI|IMG|DSC|PXL|PHOTO)[ _-]*\d/i.test(title) ? "Photograph from the U Build Group gallery" : title), featured: item.featured, ...(item.sourceUrl ? { sourceUrl: item.sourceUrl } : {}) };
       if (old) {
         try {
           await access(path.join(output, path.basename(old.src)));

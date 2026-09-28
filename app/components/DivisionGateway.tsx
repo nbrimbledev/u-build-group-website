@@ -88,7 +88,7 @@ export function DivisionGateway() {
         <motion.div
           ref={artRef}
           className="portfolio-hero-art"
-          initial={reduceMotion ? false : { opacity: 0, x: 28 }}
+          initial={false}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
           onPointerEnter={(event) => {
@@ -155,7 +155,7 @@ export function DivisionGateway() {
               rel="noopener noreferrer"
               custom={index}
               variants={companyVariants}
-              initial={reduceMotion ? false : "hidden"}
+              initial={false}
               animate="visible"
               key={company.name}
             >
@@ -166,7 +166,7 @@ export function DivisionGateway() {
               className={`company-band is-${company.accent} is-pending`}
               custom={index}
               variants={companyVariants}
-              initial={reduceMotion ? false : "hidden"}
+              initial={false}
               animate="visible"
               key={company.name}
             >

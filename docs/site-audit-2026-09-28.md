@@ -111,3 +111,17 @@ Remaining issues: P0 0, P1 1, P2 3, P3 2. Six consistency issues resolved. No de
 The permanent public content routes are Home, Team and Gallery. The embedded map is a supporting document rather than a separately navigated page. The framework's generic not-found page is outside this chrome update; a branded recovery page is a useful later addition.
 
 Retain the original project photos, Featured-only OneDrive hero additions, random gallery order, hidden gallery titles and Google verification file.
+
+## Hardening follow-up
+
+Completed the requested hardening pass on 28 September 2026. The original findings above record the initial audit; the following supersedes their status.
+
+- The 32 imported photos now have individually reviewed descriptions stored separately from sync output. Accessible gallery names use these descriptions. Future camera filenames receive a neutral fallback pending editorial review. Descriptions remain invisible during normal gallery browsing.
+- Reveal content and company routes now render visibly before hydration. Gallery cards are ordinary image links enhanced into a dialog, so opening photographs still works with scripts blocked or dialog support absent.
+- Gallery failures have a readable message and the full-size viewer offers retry. Empty collections render a clear message. Scroll locking is restored only when this component owns the lock.
+- The missing-page screen now shares the site header/footer and supplies recovery links. Navigation wraps under enlarged text, and headings wrap long words.
+- Browsers without IntersectionObserver retain a usable map load button and a static hero backdrop.
+
+Verification: ten automated tests passed, including sync metadata reuse and pre-hydration visibility/link checks. Lint and production build passed. Empty-gallery output was checked with server rendering. Browser checks covered Home, Team, Gallery and missing-page screens at desktop/mobile widths, blocked image requests and retry, keyboard closure/focus restoration, and scripts blocked in a fresh browser session (confirmed no React hydration). The 320px enlarged-text check caught a heading overflow, corrected with wrapping. No new performance score or full assistive-technology certification is claimed.
+
+Statistics attribution still needs owner confirmation. A visible hero pause control remains an animation follow-up. The separate design-documentation refresh and visual polish recommendations remain open.

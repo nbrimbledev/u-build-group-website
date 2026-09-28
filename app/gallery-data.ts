@@ -1,3 +1,4 @@
+import descriptions from "./data/gallery-descriptions.json";
 import synced from "./data/gallery-synced.json";
 import construction from "./data/construction-projects.json";
 
@@ -32,8 +33,14 @@ function uniquePhotos(photos: GalleryPhoto[]): GalleryPhoto[] {
     return true;
   });
 }
+const describedSynced = synced.map((photo) => ({
+  ...photo,
+  alt: (descriptions as Record<string, string>)[photo.id] ||
+    (/^(?:DJI|IMG|DSC|PXL|PHOTO)[ _-]*\d/i.test(photo.alt) || !photo.alt.trim()
+      ? "Photograph from the U Build Group gallery" : photo.alt),
+}));
 const permanentPhotos = uniquePhotos([...originalPhotos, ...construction]);
-export const galleryPhotos = uniquePhotos([...permanentPhotos, ...synced]);
+export const galleryPhotos = uniquePhotos([...permanentPhotos, ...describedSynced]);
 // Only explicitly featured OneDrive photos join the permanent project reel.
-const newHeroPhotos = synced.filter((photo: GalleryPhoto) => photo.featured);
+const newHeroPhotos = describedSynced.filter((photo: GalleryPhoto) => photo.featured);
 export const heroPhotos = uniquePhotos([...permanentPhotos, ...newHeroPhotos]);

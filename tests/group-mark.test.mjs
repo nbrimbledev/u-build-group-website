@@ -77,7 +77,7 @@ test("the hero renders every Construction project image in its ambient carousel"
   const galleryHtml = await galleryResponse.text();
   const gallery = load(galleryHtml);
   const labels = gallery(".gallery-card").map((_, element) => gallery(element).attr("aria-label")).get();
-  for (const photo of additional) assert.ok(labels.includes(`Enlarge ${photo.title}`), `${photo.title} should appear in the gallery`);
+  for (const photo of additional) assert.ok(labels.some(label => label.endsWith(photo.alt)), `${photo.title} should appear in the gallery`);
 
   for (const image of projectImages) {
     assert.ok(html.includes(image), `${image} should appear in the hero carousel`);
@@ -123,4 +123,18 @@ test("public pages use consistent canonical and sharing URLs and expose crawlabl
   assert.ok(!sitemap.includes("https://ubuildgroup.ca"));
   const verification = await fetch(`${origin}/google62748e782535f299.html`);
   assert.equal(await verification.text(), "google-site-verification: google62748e782535f299.html");
+});
+
+
+test("public content remains visible before hydration and gallery images are ordinary links", async () => {
+  const $ = load(await (await waitForServer()).text());
+  for (const element of $(".group-section [style], .company-band, .reach-section [style]").toArray()) {
+    assert.doesNotMatch($(element).attr("style") ?? "", /opacity:\s*0(?:;|$)/);
+  }
+  const gallery = load(await (await fetch(`${origin}/gallery`)).text());
+  for (const element of gallery(".gallery-card").toArray()) {
+    assert.equal(element.tagName, "a");
+    assert.match(gallery(element).attr("href"), /^\//);
+    assert.doesNotMatch(gallery(element).attr("aria-label"), /(?:DJI|IMG|DSC)[ _-]*\d/i);
+  }
 });

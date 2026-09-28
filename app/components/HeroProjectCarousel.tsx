@@ -43,7 +43,7 @@ export function HeroProjectCarousel() {
 
   useEffect(() => {
     const carousel = carouselRef.current;
-    if (!carousel) return;
+    if (!carousel || !("IntersectionObserver" in window)) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => setIsInView(entry.isIntersecting),
