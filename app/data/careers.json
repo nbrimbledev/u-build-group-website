@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Carpentry",
+    "applicationsOpen": true,
+    "roles": [
+      {
+        "title": "Carpenter",
+        "type": "Full Time",
+        "description": "Frame, finish, and install with precision across residential and commercial builds.",
+        "priority": true
+      },
+      {
+        "title": "Framer",
+        "type": "Full Time",
+        "description": "Build structural framing to plan, keeping crews moving on schedule and to code.",
+        "priority": true
+      },
+      {
+        "title": "General Labourer",
+        "type": "Full Time",
+        "description": "Support skilled trades on site with material handling, prep, and cleanup.",
+        "priority": true
+      }
+    ]
+  },
+  {
+    "name": "Concrete",
+    "applicationsOpen": true,
+    "roles": [
+      {
+        "title": "Carpenter",
+        "type": "Full Time",
+        "description": "Build and set concrete forms for footings, walls, and flatwork ahead of pours.",
+        "priority": false
+      },
+      {
+        "title": "Finisher",
+        "type": "Full Time",
+        "description": "Place, level, and finish concrete to spec across foundations and flatwork.",
+        "priority": false
+      },
+      {
+        "title": "General Labourer",
+        "type": "Full Time",
+        "description": "Assist crews with site prep, material handling, and pour-day support.",
+        "priority": true
+      }
+    ]
+  },
+  {
+    "name": "Civil",
+    "applicationsOpen": true,
+    "roles": [
+      {
+        "title": "Equipment Operator",
+        "type": "Full Time",
+        "description": "Operate and maintain heavy machinery safely across active civil job sites.",
+        "priority": false
+      },
+      {
+        "title": "Foreman",
+        "type": "Full Time",
+        "description": "Lead field operations, coordinate trades, and keep daily work moving safely.",
+        "priority": false
+      }
+    ]
+  }
+]

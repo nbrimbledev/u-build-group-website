@@ -106,7 +106,7 @@ test("the fixed Group U background continues from the foundation through the map
 
 test("public pages use consistent canonical and sharing URLs and expose crawlable images", async () => {
   await waitForServer();
-  for (const route of ["/", "/team", "/gallery"]) {
+  for (const route of ["/", "/team", "/gallery", "/careers"]) {
     const response = await fetch(`${origin}${route}`);
     assert.equal(response.status, 200);
     const $ = load(await response.text());

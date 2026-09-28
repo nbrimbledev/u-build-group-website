@@ -252,6 +252,14 @@ Full-width company bands and the translucent header stay square. Fine navy rules
 
 **The Team Grid Rule.** The permanent team page uses a static responsive grid. Brody and Richard occupy the first two positions; the remaining staff follow in a fixed mixed order. The carousel implementation remains dormant in code as a backup concept and is not exposed in public navigation.
 
+### Careers
+
+Careers extends the existing mineral and light surfaces, Space Grotesk headings and Archivo copy, with the shared header and footer. The introduction pairs the Group employer statement and “Explore open roles” link with the supplied team panorama, preserving its full width and natural aspect ratio.
+
+Trade headings sit beside editorial role rows divided by fine rules. Each row keeps the role title, description and Apply action easy to scan. Below 760px, trade groups stack and each description moves beneath its title and action. Keep this ruled structure rather than turning vacancies into cards.
+
+The application area pairs introductory copy with a form on desktop and stacks below 760px. White fields use visible borders, 6px corners and a minimum 48px height. The navy submit button turns blue on hover. Keep field labels visible, attachment guidance beside each upload, and feedback within the form. Selected role labels include both trade and role so repeated titles remain distinguishable.
+
 ### Footer
 
 - **Surface:** Foundation Navy with Cool Paper text and pale blue headings.

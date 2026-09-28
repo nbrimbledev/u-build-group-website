@@ -10,6 +10,8 @@ web
 
 The primary users are prospective clients and community representatives in Manitoba who need to determine which U Build Group company is suited to their project or community.
 
+Job seekers use the Careers page to find roles with U Build Group and apply to its shared team.
+
 Partners and procurement reviewers may also use the site to understand the relationship between the companies and confirm the Group's corporate credibility. They are supporting audiences rather than the homepage's first priority.
 
 ## Product Purpose
@@ -32,7 +34,7 @@ The Group website explains this relationship without competing with the operatin
 
 Visitors may arrive knowing U Build Group without knowing which company they need. The company gateway is therefore the central workflow. Each active company route opens its separate website, where the visitor can evaluate services and make contact.
 
-The Group does not use its own inquiry form. Shared office contact details remain available in the footer for corporate context.
+The Group does not use a general project inquiry form. Shared office contact details remain available in the footer for corporate context. Careers has its own application form on the Group website because employees work for U Build Group across its companies, as confirmed by the user.
 
 ## Capabilities and Constraints
 
@@ -42,7 +44,10 @@ The Group does not use its own inquiry form. Shared office contact details remai
 - U Build Developments remains a visible placeholder with a confirmed 2026 launch commitment until its separate site is available.
 - Detailed project portfolios, testimonials, construction credentials, and service delivery content belong primarily on the operating-company websites.
 - Statistics currently present on the Group site are reported by U Build Construction Division and must not be presented as Group-wide totals.
-- The shared office email is `info@ubuildconstruction.ca`. The Group site does not collect inquiries through a form.
+- The shared office email is `info@ubuildconstruction.ca`. The Group site does not collect general project inquiries through a form.
+- The Group owns the Careers role list and application form. Employees support its companies as project needs change.
+- Careers initially lists eight roles verified against the live Construction careers page on 28 September 2026, grouped by trade. Apply selects the exact trade and role in the form on the same page; general applications are also available.
+- Applications continue to reach `careers@ubuildconstruction.ca`. The form accepts a required résumé up to 3 MB and an optional cover letter up to 1 MB. Functional details and deployment requirements are recorded in `docs/careers.md`.
 
 ## Brand Commitments
 

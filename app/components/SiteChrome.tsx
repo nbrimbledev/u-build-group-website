@@ -8,9 +8,10 @@ const navigation = [
   { href: "/#reach", label: "Locations" },
   { href: "/team", label: "Team" },
   { href: "/gallery", label: "Gallery" },
+  { href: "/careers", label: "Careers" },
 ];
 
-export function SiteHeader({ active }: { active?: "team" | "gallery" }) {
+export function SiteHeader({ active }: { active?: "team" | "gallery" | "careers" }) {
   return (
     <header className="portfolio-header">
       <a className="portfolio-brand" href="/" aria-label="U Build Group home">
