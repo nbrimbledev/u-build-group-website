@@ -1,29 +1,4 @@
-/* eslint-disable @next/next/no-html-link-for-pages -- Vinext currently throws a client hook error when next/link is used in this server component. */
 import Image from "next/image";
-import { sharedOffice } from "../site-data";
-
-export function TeamHeader({ active = "team" }: { active?: "team" | "gallery" }) {
-  return (
-    <header className="team-site-header">
-      <a className="portfolio-brand" href="/" aria-label="U Build Group home">
-        <span className="portfolio-brand-mark">
-          <Image src="/brand/u-mark-blue.svg" alt="" width={44} height={44} priority />
-        </span>
-        <span>U Build Group</span>
-      </a>
-      <nav className="team-primary-nav" aria-label="Main navigation">
-        <a href="/#companies">Companies</a>
-        <a href="/#group">The group</a>
-        <a href="/#reach">
-          <span className="desktop-nav-label">Where we operate</span>
-          <span className="mobile-nav-label">Locations</span>
-        </a>
-        <a href={active === "gallery" ? "/team" : "/gallery"}>{active === "gallery" ? "Team" : "Gallery"}</a>
-      </nav>
-      <a className="team-home-link" href="/">Group home</a>
-    </header>
-  );
-}
 
 export function TeamBanner() {
   return (
@@ -37,23 +12,5 @@ export function TeamBanner() {
         sizes="(max-width: 700px) 94vw, 1180px"
       />
     </figure>
-  );
-}
-
-export function TeamFooter() {
-  return (
-    <footer className="team-footer">
-      <div className="team-footer-brand">
-        <Image src="/brand/u-mark-blue.svg" width={46} height={46} alt="" />
-        <div>
-          <strong>U Build Group</strong>
-          <span>Stony Mountain, Manitoba</span>
-        </div>
-      </div>
-      <div className="team-footer-contact">
-        <a href={sharedOffice.phoneHref}>{sharedOffice.phone}</a>
-        <a href={sharedOffice.emailHref}>{sharedOffice.email}</a>
-      </div>
-    </footer>
   );
 }

@@ -75,28 +75,6 @@ export function DivisionGateway() {
 
   return (
     <section className="portfolio-gateway" id="companies" aria-labelledby="gateway-title">
-      <header className="portfolio-header">
-        <a className="portfolio-brand" href="#top" aria-label="U Build Group home">
-          <span className="portfolio-brand-mark">
-            <Image src="/brand/u-mark-blue.svg" alt="" width={44} height={44} priority />
-          </span>
-          <span>U Build <b>Group</b></span>
-        </a>
-        <nav aria-label="Main navigation">
-          <a href="#group">The group</a>
-          <a href="#reach">
-            <span className="desktop-nav-label">Where we operate</span>
-            <span className="mobile-nav-label">Locations</span>
-          </a>
-          <a href="/team">
-            <span className="desktop-nav-label">Meet the team</span>
-            <span className="mobile-nav-label">Team</span>
-          </a>
-          <a href="/gallery">Gallery</a>
-        </nav>
-        <a className="portfolio-phone" href="tel:+12049771956">(204) 977-1956</a>
-      </header>
-
       <div className="portfolio-hero" id="top">
         <HeroProjectCarousel />
         <div className="portfolio-hero-copy">
