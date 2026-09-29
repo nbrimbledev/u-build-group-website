@@ -59,7 +59,7 @@ export function CareerApplication() {
         <div>{category.roles.map((role) => <article className="careers-role" key={role.title}>
           <div><h4>{role.title}</h4><p className="careers-role-meta">{role.type}{role.priority && <span>Priority role</span>}</p></div>
           <p>{role.description}</p>
-          <a href="#apply" aria-label={`Apply for ${category.name} ${role.title}`} onClick={() => setSelectedRole(roleValue(category.name, role.title))}>Apply <span aria-hidden="true">↗</span></a>
+          <a href="#apply" aria-label={`Apply for ${category.name} ${role.title}`} onClick={() => setSelectedRole(roleValue(category.name, role.title))}>Apply <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 19 19 5M5 5h14v14" /></svg></a>
         </article>)}</div>
       </section>)}
       {!jobCategories.some((category) => category.applicationsOpen && category.roles.length) && <p>No specific roles are open right now. You can still send a general application below.</p>}
