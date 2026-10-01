@@ -26,8 +26,16 @@ export async function publishGallery(items, download, root = process.cwd(), coll
   await rm(stage, { recursive: true, force: true });
   await mkdir(stage, { recursive: true });
   const next = [];
+  const byContent = new Map();
+  function addPhoto(photo) {
+    const contentKey = path.basename(photo.src).replace(/^[a-f0-9]{24}-/, '');
+    const existing = byContent.get(contentKey);
+    if (existing) { existing.featured = Boolean(existing.featured || photo.featured); return; }
+    byContent.set(contentKey, photo);
+    next.push(photo);
+  }
   try {
-    for (const item of items) {
+    for (const item of [...items].sort((a, b) => Number(Boolean(a.featured)) - Number(Boolean(b.featured)))) {
       if (!supported.test(item.name)) continue;
       if (item.size > 50 * 1024 * 1024) throw new Error('A gallery image exceeds 50 MB. Resize it before syncing.');
       const id = hash(item.id).slice(0, 24);
@@ -39,7 +47,7 @@ export async function publishGallery(items, download, root = process.cwd(), coll
         try {
           await access(path.join(output, path.basename(old.src)));
           await access(path.join(output, path.basename(old.thumbnail)));
-          next.push({ ...old, ...description });
+          addPhoto({ ...old, ...description });
           continue;
         } catch { /* Recreate any missing published file. */ }
       }
@@ -51,7 +59,7 @@ export async function publishGallery(items, download, root = process.cwd(), coll
       const filename = `${id}-${hash(full).slice(0, 12)}`;
       await writeFile(path.join(stage, `${filename}.webp`), full);
       await writeFile(path.join(stage, `${filename}-thumb.webp`), thumb);
-      next.push({ id, version, ...description, src: `/${collection}/${filename}.webp`, thumbnail: `/${collection}/${filename}-thumb.webp` });
+      addPhoto({ id, version, ...description, src: `/${collection}/${filename}.webp`, thumbnail: `/${collection}/${filename}-thumb.webp` });
     }
     next.sort((a, b) => a.title.localeCompare(b.title, 'en') || a.id.localeCompare(b.id));
     await mkdir(output, { recursive: true });

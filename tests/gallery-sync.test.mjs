@@ -43,3 +43,21 @@ test('camera filenames receive readable alt text while supplied descriptions sur
     assert.equal(updated[0].alt, 'Workers installing timber roof trusses.');
   } finally { await rm(root, { recursive: true, force: true }); }
 });
+
+test('Featured copies merge with gallery photos and retain their selection on repeat syncs', async () => {
+  const root = await mkdtemp(path.join(tmpdir(), 'ubuild-gallery-duplicates-'));
+  try {
+    const bytes = await sharp({ create: { width: 30, height: 20, channels: 3, background: '#014cbb' } }).png().toBuffer();
+    const regular = { id: 'regular', name: 'Project.png', eTag: 'v1', featured: false };
+    const featured = { id: 'featured-copy', name: 'Different-name.png', eTag: 'v1', featured: true };
+    const original = await publishGallery([regular], async () => bytes, root);
+    for (let i = 0; i < 2; i++) {
+      const photos = await publishGallery([featured, regular], async () => bytes, root);
+      assert.equal(photos.length, 1);
+      assert.equal(photos[0].id, original[0].id);
+      assert.equal(photos[0].featured, true);
+    }
+    const removed = await publishGallery([regular], async () => bytes, root);
+    assert.equal(removed[0].featured, false);
+  } finally { await rm(root, { recursive: true, force: true }); }
+});

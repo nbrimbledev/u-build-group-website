@@ -47,3 +47,7 @@ calling the publishing script. Camera-style filenames get a neutral fallback
 instead of being announced as a string of numbers. Review new photographs and
 add a description override of what is visibly shown; do not infer project names
 or people's identities. These descriptions do not affect Featured selection.
+
+## Local OneDrive updates
+
+Until Microsoft automation is configured, run `node scripts/sync-gallery-local.mjs "/path/to/MARKETING/Gallery"` from this repository. Review and deploy the resulting changes. Identical optimized photo content is merged, including copies in Featured with different filenames. The gallery keeps one photo and the Featured copy selects it for the homepage reel. Removing only the Featured copy removes that selection at the next sync while retaining the gallery photo.
