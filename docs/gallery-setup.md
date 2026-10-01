@@ -52,4 +52,4 @@ or people's identities. These descriptions do not affect Featured selection.
 
 Until Microsoft automation is configured, run `node scripts/sync-gallery-local.mjs "/path/to/MARKETING/Gallery"` from this repository. Review and deploy the resulting changes. Identical optimized photo content is merged, including copies in Featured with different filenames. The gallery keeps one photo and the Featured copy selects it for the homepage reel. Removing only the Featured copy removes that selection at the next sync while retaining the gallery photo.
 
-Portrait photos are detected from saved image dimensions and grouped into tiles of up to three before the gallery shuffles. Each portrait opens separately and displays without cropping. On screens up to 600 pixels wide, portrait groups become individual full-width cards. The homepage reel is unchanged.
+Gallery photos retain their saved image proportions and shuffle individually. Desktop rows use equal-height images with widths based on aspect ratio. On screens up to 600 pixels wide, each photo occupies its own row. Photos open individually without cropping. The homepage reel is unchanged.
