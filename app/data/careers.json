@@ -4,15 +4,9 @@
     "applicationsOpen": true,
     "roles": [
       {
-        "title": "Carpenter",
+        "title": "Carpenter / Framer",
         "type": "Full Time",
-        "description": "Frame, finish, and install with precision across residential and commercial builds.",
-        "priority": true
-      },
-      {
-        "title": "Framer",
-        "type": "Full Time",
-        "description": "Build structural framing to plan, keeping crews moving on schedule and to code.",
+        "description": "Frame, finish, and install on commercial builds. Build structural framing to plan and code while keeping work on schedule.",
         "priority": true
       },
       {

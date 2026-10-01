@@ -9,7 +9,7 @@ const { POST } = compiledModule.exports;
 
 function application(overrides = {}) {
   const form = new FormData();
-  for (const [key, value] of Object.entries({ fullName: 'Test Applicant', email: 'applicant@example.com', role: 'Carpentry Carpenter', message: 'Résumé test with accents: é.', ...overrides })) form.set(key, value);
+  for (const [key, value] of Object.entries({ fullName: 'Test Applicant', email: 'applicant@example.com', role: 'Carpentry Carpenter / Framer', message: 'Résumé test with accents: é.', ...overrides })) form.set(key, value);
   if (!form.has('resume')) form.set('resume', new File(['%PDF-1.7\nTest only'], 'resume.pdf', { type: 'application/pdf' }));
   return form;
 }
@@ -41,7 +41,7 @@ test('careers delivery forwards validated attachments and preserves failure and 
     assert.equal(calls[0].url, 'https://www.ubuildconstruction.ca/api/careers/apply');
     const payload = calls[0].options.body;
     assert.equal(payload.get('email'), 'applicant@example.com');
-    assert.equal(payload.get('role'), 'Carpentry Carpenter');
+    assert.equal(payload.get('role'), 'Carpentry Carpenter / Framer');
     assert.equal(await payload.get('resume').text(), '%PDF-1.7\nTest only');
     for (const type of ['application/octet-stream', '']) {
       assert.equal((await POST(request(application({ resume: new File(['%PDF-1.7 Test'], 'generic.pdf', { type }) })))).status, 200);
