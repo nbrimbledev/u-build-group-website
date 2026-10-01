@@ -15,6 +15,9 @@ export function Gallery({ photos }: { photos: GalleryPhoto[] }) {
         const swap = Math.floor(Math.random() * (index + 1));
         [shuffled[index], shuffled[swap]] = [shuffled[swap], shuffled[index]];
       }
+      // Keep the large opening image landscape, with every photo still shown once.
+      const opening = shuffled.findIndex(photo => photo.width && photo.height && photo.width > photo.height);
+      if (opening > 0) shuffled.unshift(...shuffled.splice(opening, 1));
       setOrderedPhotos(shuffled);
     });
     return () => cancelAnimationFrame(frame);
@@ -41,7 +44,7 @@ export function Gallery({ photos }: { photos: GalleryPhoto[] }) {
         {orderedPhotos.map((item, index) => {
           const ratio = item.width && item.height ? item.width / item.height : 1.6;
           return (
-          <a key={item.id} href={item.src} className="gallery-card" style={{ flexGrow: ratio, flexBasis: `${ratio * 280}px` }} aria-label={`Enlarge photograph ${index + 1}: ${item.alt}`} aria-haspopup="dialog" onClick={(event) => {
+          <a key={item.id} href={item.src} className="gallery-card" style={{ flexGrow: index === 0 ? 0 : ratio, flexBasis: index === 0 ? "100%" : `${ratio * 280 + 12}px` }} aria-label={`Enlarge photograph ${index + 1}: ${item.alt}`} aria-haspopup="dialog" onClick={(event) => {
             if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || !dialog.current?.showModal) return;
             event.preventDefault();
             opener.current = event.currentTarget;
