@@ -55,11 +55,12 @@ export async function publishGallery(items, download, root = process.cwd(), coll
       if (bytes.length > 50 * 1024 * 1024) throw new Error('A gallery image exceeds 50 MB.');
       const processor = sharp(bytes, { limitInputPixels: 80000000 }).rotate();
       const full = await processor.clone().resize({ width: 2400, height: 2400, fit: 'inside', withoutEnlargement: true }).webp({ quality: 85 }).toBuffer();
+      const dimensions = await sharp(full).metadata();
       const thumb = await processor.clone().resize({ width: 1000, height: 1000, fit: 'inside', withoutEnlargement: true }).webp({ quality: 80 }).toBuffer();
       const filename = `${id}-${hash(full).slice(0, 12)}`;
       await writeFile(path.join(stage, `${filename}.webp`), full);
       await writeFile(path.join(stage, `${filename}-thumb.webp`), thumb);
-      addPhoto({ id, version, ...description, src: `/${collection}/${filename}.webp`, thumbnail: `/${collection}/${filename}-thumb.webp` });
+      addPhoto({ id, version, width: dimensions.width, height: dimensions.height, ...description, src: `/${collection}/${filename}.webp`, thumbnail: `/${collection}/${filename}-thumb.webp` });
     }
     next.sort((a, b) => a.title.localeCompare(b.title, 'en') || a.id.localeCompare(b.id));
     await mkdir(output, { recursive: true });

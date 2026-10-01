@@ -4,18 +4,27 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import type { GalleryPhoto } from "../gallery-data";
 
+const isPortrait = (photo: GalleryPhoto) => Boolean(photo.width && photo.height && photo.height > photo.width);
+function groupPhotos(photos: GalleryPhoto[]) {
+  const portraits = photos.filter(isPortrait);
+  const tiles = photos.filter(photo => !isPortrait(photo)).map(photo => [photo]);
+  for (let i = 0; i < portraits.length; i += 3) tiles.push(portraits.slice(i, i + 3));
+  return tiles;
+}
+
 export function Gallery({ photos }: { photos: GalleryPhoto[] }) {
   const [selected, setSelected] = useState(0);
-  const [orderedPhotos, setOrderedPhotos] = useState(photos);
+  const [tiles, setTiles] = useState(() => groupPhotos(photos));
+  const orderedPhotos = tiles.flat();
 
   useEffect(() => {
     const frame = requestAnimationFrame(() => {
-      const shuffled = [...photos];
+      const shuffled = groupPhotos(photos);
       for (let index = shuffled.length - 1; index > 0; index -= 1) {
         const swap = Math.floor(Math.random() * (index + 1));
         [shuffled[index], shuffled[swap]] = [shuffled[swap], shuffled[index]];
       }
-      setOrderedPhotos(shuffled);
+      setTiles(shuffled);
     });
     return () => cancelAnimationFrame(frame);
   }, [photos]);
@@ -38,8 +47,12 @@ export function Gallery({ photos }: { photos: GalleryPhoto[] }) {
   return (
     <>
       <div className="gallery-grid">
-        {orderedPhotos.map((item, index) => (
-          <a key={item.id} href={item.src} className="gallery-card" aria-label={`Enlarge photograph ${index + 1}: ${item.alt}`} aria-haspopup="dialog" onClick={(event) => {
+        {tiles.map((tile) => (
+          <div key={tile.map(item => item.id).join('-')} className={`gallery-tile${isPortrait(tile[0]) ? ' gallery-portrait-group' : ''}`}>
+          {tile.map((item) => {
+            const index = orderedPhotos.indexOf(item);
+            return (
+          <a key={item.id} href={item.src} className={`gallery-card${isPortrait(item) ? " is-portrait" : ""}`} aria-label={`Enlarge photograph ${index + 1}: ${item.alt}`} aria-haspopup="dialog" onClick={(event) => {
             if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || !dialog.current?.showModal) return;
             event.preventDefault();
             opener.current = event.currentTarget;
@@ -49,11 +62,14 @@ export function Gallery({ photos }: { photos: GalleryPhoto[] }) {
             scrollLocked.current = true;
             dialog.current?.showModal();
           }}>
-            <span className="gallery-photo-frame">
+            <span className="gallery-photo-frame" style={isPortrait(item) ? { aspectRatio: `${item.width} / ${item.height}` } : undefined}>
               <GalleryImage src={index === 0 ? item.src : item.thumbnail ?? item.src} alt={item.alt} fill priority={index === 0} sizes={index === 0 ? "(max-width: 600px) 92vw, (max-width: 1344px) 95vw, 1280px" : "(max-width: 600px) 92vw, (max-width: 1344px) 46vw, 628px"} style={{ objectPosition: item.focus === "lower" ? "center 70%" : undefined }} />
               <span className="gallery-enlarge" aria-hidden="true">↗</span>
             </span>
           </a>
+            );
+          })}
+          </div>
         ))}
       </div>
       <dialog className="gallery-lightbox" ref={dialog} aria-label="Project photograph viewer" onClose={() => {

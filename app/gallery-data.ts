@@ -4,6 +4,8 @@ import construction from "./data/construction-projects.json";
 
 export type GalleryPhoto = {
   id: string;
+  width?: number;
+  height?: number;
   sourceUrl?: string;
   src: string;
   thumbnail?: string;
@@ -15,11 +17,11 @@ export type GalleryPhoto = {
 
 // These original photographs remain even when the SharePoint folder changes.
 export const originalPhotos: GalleryPhoto[] = [
-  { id: "original-coop", src: "/project-carousel/coop-academy-pharmacy.webp", sourceUrl: "https://www.ubuildconstruction.ca/projects/coop-academy-pharmacy.webp", title: "Co-op Academy Pharmacy", alt: "Co-op Academy Pharmacy project", featured: true },
-  { id: "original-hero", src: "/project-carousel/hero.jpg", title: "École Regent Day Care", alt: "Timber roof framing at the École Regent Day Care construction site", featured: true },
-  { id: "original-kelsey", src: "/project-carousel/kelsey-estates.webp", sourceUrl: "https://www.ubuildconstruction.ca/projects/kelsey-estates.webp", title: "Kelsey Estates", alt: "Kelsey Estates project", featured: true },
-  { id: "original-stony", src: "/project-carousel/stony-mountain-commercial-rental-units.webp", sourceUrl: "https://www.ubuildconstruction.ca/projects/stony-mountain-commercial-rental-units.webp", title: "Stony Mountain commercial rental units", alt: "Commercial rental units in Stony Mountain", featured: true },
-  { id: "original-westhawk", src: "/project-carousel/west-hawk-lake.webp", sourceUrl: "https://www.ubuildconstruction.ca/projects/west-hawk-lake.webp", title: "West Hawk Lake", alt: "West Hawk Lake project", featured: true, focus: "lower" },
+  { id: "original-coop", src: "/project-carousel/coop-academy-pharmacy.webp", width: 1920, height: 1440, sourceUrl: "https://www.ubuildconstruction.ca/projects/coop-academy-pharmacy.webp", title: "Co-op Academy Pharmacy", alt: "Co-op Academy Pharmacy project", featured: true },
+  { id: "original-hero", src: "/project-carousel/hero.jpg", width: 1938, height: 1103, title: "École Regent Day Care", alt: "Timber roof framing at the École Regent Day Care construction site", featured: true },
+  { id: "original-kelsey", src: "/project-carousel/kelsey-estates.webp", width: 1920, height: 1440, sourceUrl: "https://www.ubuildconstruction.ca/projects/kelsey-estates.webp", title: "Kelsey Estates", alt: "Kelsey Estates project", featured: true },
+  { id: "original-stony", src: "/project-carousel/stony-mountain-commercial-rental-units.webp", width: 1920, height: 1080, sourceUrl: "https://www.ubuildconstruction.ca/projects/stony-mountain-commercial-rental-units.webp", title: "Stony Mountain commercial rental units", alt: "Commercial rental units in Stony Mountain", featured: true },
+  { id: "original-westhawk", src: "/project-carousel/west-hawk-lake.webp", width: 960, height: 1280, sourceUrl: "https://www.ubuildconstruction.ca/projects/west-hawk-lake.webp", title: "West Hawk Lake", alt: "West Hawk Lake project", featured: true, focus: "lower" },
 ];
 
 // The four originals already on the Construction page keep their existing copies.
