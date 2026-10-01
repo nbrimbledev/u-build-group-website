@@ -1088,3 +1088,49 @@ h1, h2, h3, h4 { overflow-wrap: anywhere; }
 @media (min-width: 601px) {
   .gallery-grid::after { content: ""; flex-grow: 999; flex-basis: 0; }
 }
+
+/* Company gateway: operating companies first, development below. */
+.company-cards {
+  width: min(1180px, calc(100% - 64px));
+  margin: 0 auto 64px;
+  border: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.company-cards .company-band {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  align-items: start;
+  gap: 22px;
+  min-height: 0;
+  padding: 28px 32px 22px;
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+}
+.company-cards .company-band::before { display: none; }
+.company-cards .company-icon-frame { background: transparent; box-shadow: none; border-radius: 0; width: 152px; height: 88px; }
+.company-cards .company-band-copy strong { font-size: clamp(1.8rem, 2.8vw, 2.55rem); letter-spacing: -.03em; line-height: 1.08; }
+.company-cards .company-band-action { justify-content: flex-start; }
+.company-cards .company-band.is-pending {
+  grid-column: 1 / -1;
+  grid-template-columns: 128px minmax(0, 1fr) auto;
+  grid-template-rows: auto;
+  align-items: center;
+  padding: 22px 32px;
+  gap: 24px;
+}
+.company-cards .is-pending .company-icon-frame { width: 128px; height: 76px; }
+.company-cards .is-pending .company-icon-frame img { width: 128px; height: 76px; }
+.company-cards .is-pending .company-band-copy strong { font-size: clamp(1.5rem, 2.2vw, 2rem); }
+.company-cards .is-pending .company-band-copy > span { font-size: .95rem; margin-top: 8px; }
+.company-cards .is-pending:hover .company-band-copy small { color: var(--properties-dark); }
+.company-cards .is-pending:hover .company-band-copy > span { color: var(--ink-soft); }
+.company-cards .is-pending:hover .company-band-action { color: var(--construction); }
+@media (max-width: 760px) {
+  .company-cards { width: calc(100% - 36px); grid-template-columns: 1fr; gap: 16px; margin-bottom: 40px; }
+  .company-cards .company-band { padding: 24px; gap: 16px; }
+  .company-cards .company-band-copy strong { font-size: clamp(1.7rem, 6vw, 2.2rem); }
+  .company-cards .company-band.is-pending { grid-template-columns: 1fr; gap: 14px; }
+  .company-cards .company-band-action { grid-column: auto; }
+}

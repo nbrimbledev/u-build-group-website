@@ -123,7 +123,7 @@ export function DivisionGateway() {
         </motion.div>
       </div>
 
-      <div className="company-bands" id="company-routes" aria-label="U Build Group companies">
+      <div className="company-bands company-cards" id="company-routes" aria-label="U Build Group companies">
         {companies.map((company, index) => {
           const content = (
             <>
