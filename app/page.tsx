@@ -32,7 +32,7 @@ export default function Home() {
             <ul className="group-company-marks" aria-label="Companies within U Build Group">
               <li><Image src="/brand/u-mark-blue.svg" alt="" width={56} height={56} /><span>U Build Construction Division</span></li>
               <li><Image src="/brand/everett-mark.svg" alt="" width={56} height={56} /><span>Everett Construction Group</span></li>
-              <li><Image src="/brand/u-mark-blue.svg" alt="" width={56} height={56} /><span>U Build Developments<small>In development</small></span></li>
+              <li><Image src="/brand/u-mark-teal.svg" alt="" width={56} height={56} /><span>U Build Developments<small>In development</small></span></li>
             </ul>
 
             <Reveal className="group-foundation">
