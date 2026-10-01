@@ -35,7 +35,7 @@ test("the Group U SVG is used throughout the rendered site", async () => {
     /<link[^>]+rel="icon"[^>]+href="\/brand\/u-mark-blue\.svg"/.test(html),
     "the document should declare the Group SVG as its favicon",
   );
-  assert.equal((html.match(/<img[^>]+src="\/brand\/u-mark-blue\.svg"/g) ?? []).length, 2);
+  assert.equal((html.match(/<img[^>]+src="\/brand\/u-mark-blue\.svg"/g) ?? []).length, 4);
   assert.ok(html.includes(`https://www.ubuildgroup.ca${mark}`));
 
   const manifestResponse = await fetch(`${origin}/manifest.webmanifest`);

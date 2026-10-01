@@ -1134,3 +1134,11 @@ h1, h2, h3, h4 { overflow-wrap: anywhere; }
   .company-cards .company-band.is-pending { grid-template-columns: 1fr; gap: 14px; }
   .company-cards .company-band-action { grid-column: auto; }
 }
+
+.group-company-marks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin: 40px 0 0; padding: 0; list-style: none; }
+.group-company-marks li { display: flex; align-items: center; gap: 16px; min-width: 0; }
+.group-company-marks img { flex-shrink: 0; width: 56px; height: 56px; object-fit: contain; }
+.group-company-marks span { font-family: var(--font-heading), sans-serif; font-size: 1.05rem; line-height: 1.35; }
+.group-company-marks small { display: block; margin-top: 5px; font-family: var(--font-body), sans-serif; font-size: .8rem; color: var(--ink-soft); }
+.group-company-marks + .group-foundation { margin-top: 40px; }
+@media (max-width: 760px) { .group-company-marks { grid-template-columns: 1fr; gap: 24px; } }

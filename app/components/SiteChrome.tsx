@@ -4,7 +4,6 @@ import { sharedOffice, socialLinks } from "../site-data";
 
 const navigation = [
   { href: "/#company-routes", label: "Companies" },
-  { href: "/#group", label: "The group" },
   { href: "/#reach", label: "Locations" },
   { href: "/team", label: "Team" },
   { href: "/gallery", label: "Gallery" },
