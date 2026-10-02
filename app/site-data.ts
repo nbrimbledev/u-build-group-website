@@ -10,10 +10,10 @@ export const sharedOffice = {
 } as const;
 
 export const statistics = [
-  { value: "32+", label: "Designs delivered" },
-  { value: "327", label: "Construction projects" },
-  { value: "189", label: "Renovation projects" },
-  { value: "553", label: "Satisfied clients" },
+  { value: "36+", label: "Designs delivered" },
+  { value: "358", label: "Construction projects" },
+  { value: "204", label: "Renovation projects" },
+  { value: "591", label: "Satisfied clients" },
 ] as const;
 
 export const projects = [
