@@ -19,7 +19,7 @@ const companies = [
     name: "Everett Construction Group",
     type: "Indigenous owned and operated",
     focus: "Construction for northern, remote and First Nations communities.",
-    href: "https://www.everettconstructiongroup.ca/",
+    href: "https://everette-construction.webflow.io/",
     accent: "everett",
     status: "Visit company site",
     mark: "/brand/everett-logo2.png",

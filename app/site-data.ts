@@ -49,7 +49,7 @@ export const announcements = [
     accent: "everett",
     title: "Northern project capacity expanded",
     body: "Everett has expanded crew capacity for northern and remote community projects this season.",
-    href: "https://www.everettconstructiongroup.ca/",
+    href: "https://everette-construction.webflow.io/",
   },
 ] as const;
 
