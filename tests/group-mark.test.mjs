@@ -52,24 +52,14 @@ test("the Group U SVG is used throughout the rendered site", async () => {
 test("the hero renders every Construction project image in its ambient carousel", async () => {
   const response = await waitForServer();
   const html = await response.text();
-  const projectImages = [
-    "coop-academy-pharmacy.webp",
-    "hero.jpg",
-    "kelsey-estates.webp",
-    "stony-mountain-commercial-rental-units.webp",
-    "west-hawk-lake.webp",
-  ];
-
   assert.match(html, /class="hero-project-carousel"[^>]+aria-hidden="true"/);
   assert.match(html, /class="hero-project-carousel-row is-forward"/);
   assert.match(html, /class="hero-project-carousel-row is-reverse"/);
   const construction = JSON.parse(await readFile("app/data/construction-projects.json", "utf8"));
-  const originalUrls = new Set(projectImages.map((name) => `https://www.ubuildconstruction.ca/projects/${name}`));
-  const additional = construction.filter((photo) => !originalUrls.has(photo.sourceUrl));
   const synced = JSON.parse(await readFile("app/data/gallery-synced.json", "utf8"));
   const heroAdditions = synced.filter(photo => photo.featured);
-  assert.equal((html.match(/class="hero-project-frame"/g) ?? []).length, (projectImages.length + additional.length + heroAdditions.length) * 2);
-  for (const photo of additional) {
+  assert.equal((html.match(/class="hero-project-frame"/g) ?? []).length, (construction.length + heroAdditions.length) * 2);
+  for (const photo of construction) {
     assert.ok(html.includes((photo.thumbnail ?? photo.src).split("/").pop()), `${photo.title} from the Construction page should appear in the hero`);
   }
   const galleryResponse = await fetch(`${origin}/gallery`);
@@ -77,11 +67,9 @@ test("the hero renders every Construction project image in its ambient carousel"
   const galleryHtml = await galleryResponse.text();
   const gallery = load(galleryHtml);
   const labels = gallery(".gallery-card").map((_, element) => gallery(element).attr("aria-label")).get();
-  for (const photo of additional) assert.ok(labels.some(label => label.endsWith(photo.alt)), `${photo.title} should appear in the gallery`);
+  for (const photo of construction) assert.ok(labels.some(label => label.endsWith(photo.alt)), `${photo.title} should appear in the gallery`);
 
-  for (const image of projectImages) {
-    assert.ok(html.includes(image), `${image} should appear in the hero carousel`);
-  }
+
 });
 
 test("the hero uses the supplied Developments logo without the coloured footer strip", async () => {

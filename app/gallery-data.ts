@@ -24,7 +24,7 @@ export const originalPhotos: GalleryPhoto[] = [
   { id: "original-westhawk", src: "/project-carousel/west-hawk-lake.webp", width: 960, height: 1280, sourceUrl: "https://www.ubuildconstruction.ca/projects/west-hawk-lake.webp", title: "West Hawk Lake", alt: "West Hawk Lake project", featured: true, focus: "lower" },
 ];
 
-// The four originals already on the Construction page keep their existing copies.
+// Current Construction photos take precedence over saved original copies.
 // Both displays use the full source collection, without counting those photos twice.
 function uniquePhotos(photos: GalleryPhoto[]): GalleryPhoto[] {
   const seen = new Set<string>();
@@ -41,7 +41,11 @@ const describedSynced = synced.map((photo) => ({
     (/^(?:DJI|IMG|DSC|PXL|PHOTO)[ _-]*\d/i.test(photo.alt) || !photo.alt.trim()
       ? "Photograph from the U Build Group gallery" : photo.alt),
 }));
-const permanentPhotos = uniquePhotos([...originalPhotos, ...construction]);
+const currentProjectTitles = new Set(construction.map(photo => photo.title.toLowerCase().trim()));
+const permanentPhotos = uniquePhotos([
+  ...construction,
+  ...originalPhotos.filter(photo => !currentProjectTitles.has(photo.title.toLowerCase().trim())),
+]);
 export const galleryPhotos = uniquePhotos([...permanentPhotos, ...describedSynced]);
 // Only explicitly featured OneDrive photos join the permanent project reel.
 const newHeroPhotos = describedSynced.filter((photo: GalleryPhoto) => photo.featured);

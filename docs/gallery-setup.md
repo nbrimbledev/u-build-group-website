@@ -30,7 +30,7 @@ The page and synchronization code are implemented. The Microsoft application, re
 
 ## Construction Projects source
 
-`npm run projects:sync` reads the public https://www.ubuildconstruction.ca/projects page, extracts all project cards, and saves optimized copies in `public/construction-projects` with their titles, descriptions and source URLs in `app/data/construction-projects.json`. It needs no Microsoft credentials. The shared collection combines these photos with the five originals and OneDrive additions. Source URLs prevent the four overlapping original photos from appearing twice. The original timber-framing image stays.
+`npm run projects:sync` reads the public https://www.ubuildconstruction.ca/projects page, extracts all project cards, and saves optimized copies in `public/construction-projects` with their titles, descriptions and source URLs in `app/data/construction-projects.json`. It needs no Microsoft credentials. The shared collection combines these photos with the five originals and OneDrive additions. Current Construction photos take precedence over original copies matched by project title or source URL. Originals remain as fallbacks when no current project matches.
 
 Vercel deployments and `npm run build` refresh the Construction collection automatically. A source outage or unrecognized page layout uses the last complete saved collection during builds; a manual sync reports failure. This is a build-time refresh, not a live request on each visit. Updating Construction alone does not trigger a Group deployment; deploy the Group site to refresh it. The OneDrive schedule remains separately disabled pending administrator setup.
 
