@@ -1142,3 +1142,5 @@ h1, h2, h3, h4 { overflow-wrap: anywhere; }
 .group-company-marks small { display: block; margin-top: 5px; font-family: var(--font-body), sans-serif; font-size: .8rem; color: var(--ink-soft); }
 .group-company-marks + .group-foundation { margin-top: 40px; }
 @media (max-width: 760px) { .group-company-marks { grid-template-columns: 1fr; gap: 24px; } }
+
+.team-hero-copy + .team-banner-frame { margin-top: clamp(32px, 5vw, 64px); }

@@ -6,8 +6,9 @@ export function TeamBanner() {
       <Image
         src="/team/group.jpg"
         alt="The U Build Group team standing together in the Stony Mountain office"
-        width={2800}
-        height={811}
+        width={7205}
+        height={2087}
+        quality={90}
         priority
         sizes="(max-width: 700px) 94vw, 1180px"
       />
