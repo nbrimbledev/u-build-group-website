@@ -297,6 +297,39 @@
     "height": 1350
   },
   {
+    "id": "ac975a7556821bce851cedd1",
+    "version": "5371132-1791230812176",
+    "width": 1350,
+    "height": 2400,
+    "title": "DJI 20260929091218 0129 D",
+    "alt": "Photograph from the U Build Group gallery",
+    "featured": true,
+    "src": "/gallery-synced/ac975a7556821bce851cedd1-8c0c3cae1f33.webp",
+    "thumbnail": "/gallery-synced/ac975a7556821bce851cedd1-8c0c3cae1f33-thumb.webp"
+  },
+  {
+    "id": "2c29d5300d6e4e2ee5551cd1",
+    "version": "6323232-1791230811922",
+    "width": 1350,
+    "height": 2400,
+    "title": "DJI 20260929091322 0132 D",
+    "alt": "Photograph from the U Build Group gallery",
+    "featured": true,
+    "src": "/gallery-synced/2c29d5300d6e4e2ee5551cd1-977e4d0cc2ea.webp",
+    "thumbnail": "/gallery-synced/2c29d5300d6e4e2ee5551cd1-977e4d0cc2ea-thumb.webp"
+  },
+  {
+    "id": "89d5a3d980646875db5d6b34",
+    "version": "6764122-1791230808906",
+    "width": 1350,
+    "height": 2400,
+    "title": "DJI 20260929092640 0146 D",
+    "alt": "Photograph from the U Build Group gallery",
+    "featured": true,
+    "src": "/gallery-synced/89d5a3d980646875db5d6b34-1b07f579c4eb.webp",
+    "thumbnail": "/gallery-synced/89d5a3d980646875db5d6b34-1b07f579c4eb-thumb.webp"
+  },
+  {
     "id": "9d85906fdc5d38f88eee0542",
     "version": "18449272-1790865851439",
     "title": "DJI 20260929093308 0154 D 2",
@@ -312,21 +345,109 @@
     "version": "18767442-1790711891380",
     "title": "DJI 20260929093828 0161 D Edit",
     "alt": "Photograph from the U Build Group gallery",
-    "featured": true,
+    "featured": false,
     "src": "/gallery-synced/54c39c91d6954b29136fdea5-362fa58cd3ea.webp",
     "thumbnail": "/gallery-synced/54c39c91d6954b29136fdea5-362fa58cd3ea-thumb.webp",
     "width": 1350,
     "height": 2400
   },
   {
+    "id": "6525cc305848d419452003ba",
+    "version": "5932571-1791392320686",
+    "width": 1350,
+    "height": 2400,
+    "title": "DJI 20260929093828 0161 D Edit",
+    "alt": "Photograph from the U Build Group gallery",
+    "featured": true,
+    "src": "/gallery-synced/6525cc305848d419452003ba-36838a5a3ce7.webp",
+    "thumbnail": "/gallery-synced/6525cc305848d419452003ba-36838a5a3ce7-thumb.webp"
+  },
+  {
+    "id": "fe6dfa9c94ea46c5823ef50e",
+    "version": "7166274-1791230808916",
+    "width": 1350,
+    "height": 2400,
+    "title": "DJI 20260929094706 0170 D",
+    "alt": "Photograph from the U Build Group gallery",
+    "featured": true,
+    "src": "/gallery-synced/fe6dfa9c94ea46c5823ef50e-ae6575109794.webp",
+    "thumbnail": "/gallery-synced/fe6dfa9c94ea46c5823ef50e-ae6575109794-thumb.webp"
+  },
+  {
+    "id": "127e1b06d258f1c8e9c0ffbd",
+    "version": "6062383-1791291718957",
+    "width": 1350,
+    "height": 2400,
+    "title": "DJI 20260929094727 0171 D 3",
+    "alt": "Photograph from the U Build Group gallery",
+    "featured": true,
+    "src": "/gallery-synced/127e1b06d258f1c8e9c0ffbd-040c31519e9f.webp",
+    "thumbnail": "/gallery-synced/127e1b06d258f1c8e9c0ffbd-040c31519e9f-thumb.webp"
+  },
+  {
+    "id": "05ffff23f6b8ff8c5bfc4a04",
+    "version": "5695235-1791230720988",
+    "width": 1350,
+    "height": 2400,
+    "title": "DJI 20260929094807 0177 D",
+    "alt": "Photograph from the U Build Group gallery",
+    "featured": true,
+    "src": "/gallery-synced/05ffff23f6b8ff8c5bfc4a04-2bbed99cdcbc.webp",
+    "thumbnail": "/gallery-synced/05ffff23f6b8ff8c5bfc4a04-2bbed99cdcbc-thumb.webp"
+  },
+  {
+    "id": "bf9b820919f4e1cebe25cdb8",
+    "version": "8197573-1791230807958",
+    "width": 1350,
+    "height": 2400,
+    "title": "DJI 20260929095936 0185 D",
+    "alt": "Photograph from the U Build Group gallery",
+    "featured": true,
+    "src": "/gallery-synced/bf9b820919f4e1cebe25cdb8-0320bb54ad94.webp",
+    "thumbnail": "/gallery-synced/bf9b820919f4e1cebe25cdb8-0320bb54ad94-thumb.webp"
+  },
+  {
+    "id": "8bdb9eb8e09d4349c47a36de",
+    "version": "9094723-1791393428272",
+    "width": 1350,
+    "height": 2400,
+    "title": "DJI 20260929103654 0201 D",
+    "alt": "Photograph from the U Build Group gallery",
+    "featured": true,
+    "src": "/gallery-synced/8bdb9eb8e09d4349c47a36de-5d48e0d99b2e.webp",
+    "thumbnail": "/gallery-synced/8bdb9eb8e09d4349c47a36de-5d48e0d99b2e-thumb.webp"
+  },
+  {
+    "id": "a428947b2970403fa79390d4",
+    "version": "15136747-1791394238478",
+    "width": 2400,
+    "height": 1350,
+    "title": "DJI 20260929133649 0222 D",
+    "alt": "Photograph from the U Build Group gallery",
+    "featured": true,
+    "src": "/gallery-synced/a428947b2970403fa79390d4-a3aea16beb2a.webp",
+    "thumbnail": "/gallery-synced/a428947b2970403fa79390d4-a3aea16beb2a-thumb.webp"
+  },
+  {
     "id": "2eee21d1ba9bffc1b4d0ab7b",
     "version": "2182678-1790085919182",
     "title": "Image",
     "alt": "Image",
-    "featured": true,
+    "featured": false,
     "src": "/gallery-synced/2eee21d1ba9bffc1b4d0ab7b-f3bdcdbeb45d.webp",
     "thumbnail": "/gallery-synced/2eee21d1ba9bffc1b4d0ab7b-f3bdcdbeb45d-thumb.webp",
     "width": 1350,
     "height": 2400
+  },
+  {
+    "id": "4d31820337721b3cdb51562b",
+    "version": "1726474-1791392864054",
+    "width": 1350,
+    "height": 2400,
+    "title": "Image",
+    "alt": "Image",
+    "featured": true,
+    "src": "/gallery-synced/4d31820337721b3cdb51562b-fc2b3ca3b172.webp",
+    "thumbnail": "/gallery-synced/4d31820337721b3cdb51562b-fc2b3ca3b172-thumb.webp"
   }
 ]
