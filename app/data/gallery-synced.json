@@ -330,26 +330,15 @@
     "thumbnail": "/gallery-synced/89d5a3d980646875db5d6b34-1b07f579c4eb-thumb.webp"
   },
   {
-    "id": "9d85906fdc5d38f88eee0542",
+    "id": "ef18646da2b1fe452ce88656",
     "version": "18449272-1790865851439",
+    "width": 2400,
+    "height": 2400,
     "title": "DJI 20260929093308 0154 D 2",
     "alt": "Photograph from the U Build Group gallery",
     "featured": true,
-    "src": "/gallery-synced/9d85906fdc5d38f88eee0542-2b3c60e99f81.webp",
-    "thumbnail": "/gallery-synced/9d85906fdc5d38f88eee0542-2b3c60e99f81-thumb.webp",
-    "width": 2400,
-    "height": 2400
-  },
-  {
-    "id": "54c39c91d6954b29136fdea5",
-    "version": "18767442-1790711891380",
-    "title": "DJI 20260929093828 0161 D Edit",
-    "alt": "Photograph from the U Build Group gallery",
-    "featured": false,
-    "src": "/gallery-synced/54c39c91d6954b29136fdea5-362fa58cd3ea.webp",
-    "thumbnail": "/gallery-synced/54c39c91d6954b29136fdea5-362fa58cd3ea-thumb.webp",
-    "width": 1350,
-    "height": 2400
+    "src": "/gallery-synced/ef18646da2b1fe452ce88656-2b3c60e99f81.webp",
+    "thumbnail": "/gallery-synced/ef18646da2b1fe452ce88656-2b3c60e99f81-thumb.webp"
   },
   {
     "id": "6525cc305848d419452003ba",
@@ -427,17 +416,6 @@
     "featured": true,
     "src": "/gallery-synced/a428947b2970403fa79390d4-a3aea16beb2a.webp",
     "thumbnail": "/gallery-synced/a428947b2970403fa79390d4-a3aea16beb2a-thumb.webp"
-  },
-  {
-    "id": "2eee21d1ba9bffc1b4d0ab7b",
-    "version": "2182678-1790085919182",
-    "title": "Image",
-    "alt": "Image",
-    "featured": false,
-    "src": "/gallery-synced/2eee21d1ba9bffc1b4d0ab7b-f3bdcdbeb45d.webp",
-    "thumbnail": "/gallery-synced/2eee21d1ba9bffc1b4d0ab7b-f3bdcdbeb45d-thumb.webp",
-    "width": 1350,
-    "height": 2400
   },
   {
     "id": "4d31820337721b3cdb51562b",
