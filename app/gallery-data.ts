@@ -46,7 +46,8 @@ const permanentPhotos = uniquePhotos([
   ...construction,
   ...originalPhotos.filter(photo => !currentProjectTitles.has(photo.title.toLowerCase().trim())),
 ]);
-export const galleryPhotos = uniquePhotos([...permanentPhotos, ...describedSynced]);
+// The Gallery contains only the curated OneDrive collection.
+export const galleryPhotos = uniquePhotos(describedSynced);
 // Only explicitly featured OneDrive photos join the permanent project reel.
 const newHeroPhotos = describedSynced.filter((photo: GalleryPhoto) => photo.featured);
 export const heroPhotos = uniquePhotos([...permanentPhotos, ...newHeroPhotos]);

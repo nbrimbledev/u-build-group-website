@@ -66,8 +66,10 @@ test("the hero renders every Construction project image in its ambient carousel"
   assert.equal(galleryResponse.status, 200);
   const galleryHtml = await galleryResponse.text();
   const gallery = load(galleryHtml);
-  const labels = gallery(".gallery-card").map((_, element) => gallery(element).attr("aria-label")).get();
-  for (const photo of construction) assert.ok(labels.some(label => label.endsWith(photo.alt)), `${photo.title} should appear in the gallery`);
+  const links = gallery(".gallery-card").map((_, element) => gallery(element).attr("href")).get();
+  assert.equal(links.length, synced.length);
+  for (const photo of synced) assert.ok(links.includes(photo.src));
+  for (const photo of construction) assert.ok(!links.includes(photo.src), `${photo.title} belongs only in the hero`);
 
 
 });
