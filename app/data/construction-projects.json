@@ -20,6 +20,26 @@
     "thumbnail": "/construction-projects/c94229f4edd94f638a6bc664-64e8a23530ff-thumb.webp"
   },
   {
+    "id": "22268b427afb63903f9ee031",
+    "width": 1920,
+    "height": 1080,
+    "title": "Churchill Park Maintenance Building Renovation",
+    "alt": "Churchill Drive Park building beside the river, with blue walls and public washroom signage",
+    "sourceUrl": "https://www.ubuildconstruction.ca/projects/churchill-park.webp",
+    "src": "/construction-projects/22268b427afb63903f9ee031-c0cde2baac0c.webp",
+    "thumbnail": "/construction-projects/22268b427afb63903f9ee031-c0cde2baac0c-thumb.webp"
+  },
+  {
+    "id": "5814509206fe303733acab4c",
+    "width": 1920,
+    "height": 1280,
+    "title": "Circle of Life Thunderbird House Washroom",
+    "alt": "Circle of Life Thunderbird House in Winnipeg, the location of the new public washroom project",
+    "sourceUrl": "https://www.ubuildconstruction.ca/projects/thunderbird-house-washroom.webp",
+    "src": "/construction-projects/5814509206fe303733acab4c-ad26632d96d3.webp",
+    "thumbnail": "/construction-projects/5814509206fe303733acab4c-ad26632d96d3-thumb.webp"
+  },
+  {
     "id": "e89bf5a9af373f008f35c95e",
     "width": 1920,
     "height": 1440,
@@ -60,14 +80,24 @@
     "thumbnail": "/construction-projects/4c6244cd257cd25daa8e504e-b48be9f4e2a4-thumb.webp"
   },
   {
-    "id": "71d822ecdce21105859706ca",
+    "id": "875c9b5bc495311f69255d5a",
+    "width": 2000,
+    "height": 2000,
+    "title": "Hangar 16 Ramp Replacement",
+    "alt": "Worker finishing the concrete ramp outside Hangar 16 at 17 Wing Winnipeg",
+    "sourceUrl": "https://www.ubuildconstruction.ca/projects/hangar-16-concrete-finishing.webp",
+    "src": "/construction-projects/875c9b5bc495311f69255d5a-3eabfe0be8d8.webp",
+    "thumbnail": "/construction-projects/875c9b5bc495311f69255d5a-3eabfe0be8d8-thumb.webp"
+  },
+  {
+    "id": "d20c05adb0c0d3373f201c48",
     "width": 1920,
     "height": 1080,
-    "title": "Hangar 16 Ramp Replacement",
-    "alt": "Crew carrying out concrete ramp replacement outside Hangar 16 at 17 Wing Winnipeg",
-    "sourceUrl": "https://www.ubuildconstruction.ca/projects/hangar-16-ramp-replacement.webp",
-    "src": "/construction-projects/71d822ecdce21105859706ca-f56de0703da1.webp",
-    "thumbnail": "/construction-projects/71d822ecdce21105859706ca-f56de0703da1-thumb.webp"
+    "title": "Hurst Pumping Station Improvements",
+    "alt": "Aerial view of Hurst Pumping Station in Winnipeg with rooftop mechanical equipment",
+    "sourceUrl": "https://www.ubuildconstruction.ca/projects/hurst-pumping-station.webp",
+    "src": "/construction-projects/d20c05adb0c0d3373f201c48-802ac3463db8.webp",
+    "thumbnail": "/construction-projects/d20c05adb0c0d3373f201c48-802ac3463db8-thumb.webp"
   },
   {
     "id": "ba91219745009b448b81214c",
@@ -130,14 +160,14 @@
     "thumbnail": "/construction-projects/ec19261a7581b4a919d112e3-037883f82edd-thumb.webp"
   },
   {
-    "id": "26fe9df2cd8c00d67b761177",
-    "width": 1920,
-    "height": 1080,
+    "id": "be849c21e5a33d8f0fdd0cde",
+    "width": 2000,
+    "height": 1125,
     "title": "Stony Mountain Commercial Rental Units",
-    "alt": "Aerial view of the Stony Mountain commercial rental units, showing storefront construction and parking lot paving",
-    "sourceUrl": "https://www.ubuildconstruction.ca/projects/stony-mountain-commercial-rental-units.webp",
-    "src": "/construction-projects/26fe9df2cd8c00d67b761177-aafeca390981.webp",
-    "thumbnail": "/construction-projects/26fe9df2cd8c00d67b761177-aafeca390981-thumb.webp"
+    "alt": "Aerial view of the Stony Mountain commercial building with Tim Hortons, Stony Mountain Convenience and the Esso fuel canopy",
+    "sourceUrl": "https://www.ubuildconstruction.ca/projects/stony-mountain-convenience-esso.webp",
+    "src": "/construction-projects/be849c21e5a33d8f0fdd0cde-f98195efec6b.webp",
+    "thumbnail": "/construction-projects/be849c21e5a33d8f0fdd0cde-f98195efec6b-thumb.webp"
   },
   {
     "id": "3accf43b33ea78b3d9ceca06",
@@ -170,14 +200,14 @@
     "thumbnail": "/construction-projects/63d64f92e225d5c99c5b428c-44d622326c42-thumb.webp"
   },
   {
-    "id": "25f027700be5774dc1245d40",
-    "width": 1807,
-    "height": 926,
+    "id": "fc2f678c301f806866857529",
+    "width": 1920,
+    "height": 1080,
     "title": "Walmart Grocery Pick-up",
     "alt": "Walmart Grocery Pick-up construction project",
-    "sourceUrl": "https://cdn.prod.website-files.com/60dc1c4325b2f31ad7d50085/65b7eb64520bdac7821d2590_walmart%20rle.jpg",
-    "src": "/construction-projects/25f027700be5774dc1245d40-5b9510c0b8c4.webp",
-    "thumbnail": "/construction-projects/25f027700be5774dc1245d40-5b9510c0b8c4-thumb.webp"
+    "sourceUrl": "https://www.ubuildconstruction.ca/projects/walmart-grocery-pickup.webp",
+    "src": "/construction-projects/fc2f678c301f806866857529-225280a3c9ce.webp",
+    "thumbnail": "/construction-projects/fc2f678c301f806866857529-225280a3c9ce-thumb.webp"
   },
   {
     "id": "e7db8f339d7cc004d619c05d",
@@ -188,6 +218,16 @@
     "sourceUrl": "https://www.ubuildconstruction.ca/projects/west-hawk-lake.webp",
     "src": "/construction-projects/e7db8f339d7cc004d619c05d-f56b41a04a18.webp",
     "thumbnail": "/construction-projects/e7db8f339d7cc004d619c05d-f56b41a04a18-thumb.webp"
+  },
+  {
+    "id": "f78db28d87aeae6913a4d29d",
+    "width": 1920,
+    "height": 865,
+    "title": "Weston School Gym Floor Replacement",
+    "alt": "Weston School gymnasium with maple flooring, court markings and Weston Hawks wall graphics",
+    "sourceUrl": "https://www.ubuildconstruction.ca/projects/weston-school-gym-floor.webp",
+    "src": "/construction-projects/f78db28d87aeae6913a4d29d-c731fe000118.webp",
+    "thumbnail": "/construction-projects/f78db28d87aeae6913a4d29d-c731fe000118-thumb.webp"
   },
   {
     "id": "a343ce11c6073ee7bbdc50b8",
