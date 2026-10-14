@@ -16,7 +16,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const siteDescription =
-  "U Build Group brings together U Build Construction Division and Everett Construction Group, serving construction projects across Manitoba.";
+  "U Build Group brings together U Build Construction and Everett Construction Group, serving construction projects across Manitoba.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.ubuildgroup.ca"),

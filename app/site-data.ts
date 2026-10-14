@@ -38,7 +38,7 @@ export const announcements = [
     href: "https://u-build-developments.vercel.app/",
   },
   {
-    division: "U Build Construction Division",
+    division: "U Build Construction",
     accent: "construction",
     title: "New division website live",
     body: "The division’s project record, service information and careers page are now available at ubuildconstruction.ca.",

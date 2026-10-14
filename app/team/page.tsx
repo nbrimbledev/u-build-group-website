@@ -6,17 +6,17 @@ import { teamMembers } from "../team-data";
 
 export const metadata: Metadata = {
   title: "Meet the Team | U Build Group",
-  description: "Meet the people behind U Build Group, supporting U Build Construction Division and Everett Construction Group across Manitoba.",
+  description: "Meet the people behind U Build Group, supporting U Build Construction and Everett Construction Group across Manitoba.",
   alternates: { canonical: "/team" },
   openGraph: {
     title: "Meet the Team | U Build Group",
-    description: "Meet the people behind U Build Group, supporting U Build Construction Division and Everett Construction Group across Manitoba.",
+    description: "Meet the people behind U Build Group, supporting U Build Construction and Everett Construction Group across Manitoba.",
     url: "/team",
     siteName: "U Build Group",
     locale: "en_CA",
     type: "website",
   },
-  twitter: { card: "summary", title: "Meet the Team | U Build Group", description: "Meet the people behind U Build Group, supporting U Build Construction Division and Everett Construction Group across Manitoba." },
+  twitter: { card: "summary", title: "Meet the Team | U Build Group", description: "Meet the people behind U Build Group, supporting U Build Construction and Everett Construction Group across Manitoba." },
 };
 
 export default function TeamPage() {

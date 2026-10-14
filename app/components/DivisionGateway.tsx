@@ -7,7 +7,7 @@ import { HeroProjectCarousel } from "./HeroProjectCarousel";
 
 const companies = [
   {
-    name: "U Build Construction Division",
+    name: "U Build Construction",
     type: "Construction company",
     focus: "Commercial and public construction projects across Manitoba.",
     href: "https://www.ubuildconstruction.ca",

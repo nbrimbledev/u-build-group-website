@@ -20,7 +20,7 @@ export default function Home() {
                 <div>
                   <h2 id="group-title">A shared foundation for distinct companies.</h2>
                   <p className="lead-copy">
-                    U Build Group brings together U Build Construction Division and Everett Construction Group, separate sister companies serving construction projects across Manitoba.
+                    U Build Group brings together U Build Construction and Everett Construction Group, separate sister companies serving construction projects across Manitoba.
                   </p>
                 </div>
                 <p className="group-intro-note">
@@ -30,7 +30,7 @@ export default function Home() {
             </Reveal>
 
             <ul className="group-company-marks" aria-label="Companies within U Build Group">
-              <li><Image src="/brand/u-mark-blue.svg" alt="" width={56} height={56} /><span>U Build Construction Division</span></li>
+              <li><Image src="/brand/u-mark-blue.svg" alt="" width={56} height={56} /><span>U Build Construction</span></li>
               <li><Image src="/brand/u-mark-teal.svg" alt="" width={56} height={56} /><span>U Build Developments</span></li>
               <li><Image src="/brand/everett-mark.svg" alt="" width={56} height={56} /><span>Everett Construction Group</span></li>
             </ul>
@@ -39,7 +39,7 @@ export default function Home() {
               <article>
                 <h3>Founder-led from the start.</h3>
                 <p>
-                  U Build Construction Division was founded by Brody Leathwood and Richard Maxwell after years of working together. They remain personally involved throughout the build while the company continues to invest in its people, technology, quality improvement and practical systems that help clients protect schedules and budgets.
+                  U Build Construction was founded by Brody Leathwood and Richard Maxwell after years of working together. They remain personally involved throughout the build while the company continues to invest in its people, technology, quality improvement and practical systems that help clients protect schedules and budgets.
                 </p>
                 <p className="founder-names">Brody Leathwood <span aria-hidden="true">+</span> Richard Maxwell</p>
               </article>
@@ -87,7 +87,7 @@ export default function Home() {
               <Reveal>
                 <div className="section-heading split-heading">
                   <h2 id="reach-title">Selected Manitoba locations, with a clear company focus.</h2>
-                  <p>The map highlights selected communities, project locations and the group’s first commercial property. Everett Construction Group focuses on northern, remote and First Nations communities, while U Build Construction Division serves projects elsewhere across Manitoba.</p>
+                  <p>The map highlights selected communities, project locations and the group’s first commercial property. Everett Construction Group focuses on northern, remote and First Nations communities, while U Build Construction serves projects elsewhere across Manitoba.</p>
                 </div>
               </Reveal>
             </div>
@@ -112,7 +112,7 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <p className="source-note">Source: figures reported by U Build Construction Division and Everett Construction Group.</p>
+              <p className="source-note">Source: figures reported by U Build Construction and Everett Construction Group.</p>
             </Reveal>
           </div>
         </section>

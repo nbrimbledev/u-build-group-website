@@ -48,7 +48,7 @@ export function SiteFooter() {
           <div>
             <h2>Social</h2>
             <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer">U Build Group Instagram</a>
-            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer">U Build Construction Division LinkedIn</a>
+            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer">U Build Construction LinkedIn</a>
             <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
           </div>
         </div>
