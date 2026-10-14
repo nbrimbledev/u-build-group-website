@@ -33,9 +33,9 @@ export const announcements = [
   {
     division: "U Build Developments",
     accent: "properties",
-    title: "Third division in formation",
-    body: "The group is organizing its ownership and leasing work under a dedicated division for multi-family, commercial and land holdings.",
-    href: "#companies",
+    title: "Developments website live",
+    body: "Explore U Build Developments’ commercial property ownership and leasing.",
+    href: "https://u-build-developments.vercel.app/",
   },
   {
     division: "U Build Construction Division",

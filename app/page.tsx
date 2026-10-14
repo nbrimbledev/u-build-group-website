@@ -31,8 +31,8 @@ export default function Home() {
 
             <ul className="group-company-marks" aria-label="Companies within U Build Group">
               <li><Image src="/brand/u-mark-blue.svg" alt="" width={56} height={56} /><span>U Build Construction Division</span></li>
+              <li><Image src="/brand/u-mark-teal.svg" alt="" width={56} height={56} /><span>U Build Developments</span></li>
               <li><Image src="/brand/everett-mark.svg" alt="" width={56} height={56} /><span>Everett Construction Group</span></li>
-              <li><Image src="/brand/u-mark-teal.svg" alt="" width={56} height={56} /><span>U Build Developments<small>In development</small></span></li>
             </ul>
 
             <Reveal className="group-foundation">
@@ -46,12 +46,12 @@ export default function Home() {
               <article>
                 <h3>Separate companies with clear mandates.</h3>
                 <p>
-                  Everett Construction Group, established in 2020, operates as a separate Indigenous-owned sister company focused on northern, remote and First Nations communities. U Build Developments remains planned for 2026.
+                  Everett Construction Group, established in 2020, operates as a separate Indigenous-owned sister company focused on northern, remote and First Nations communities. U Build Developments focuses on commercial property ownership and leasing.
                 </p>
                 <p className="collaboration-note">
                   On northern projects, the companies can collaborate through estimating, project management, coordination, administrative and safety support. Everett continues to operate under its own mandate.
                 </p>
-                <p className="group-structure">Two active sister companies <span aria-hidden="true">·</span> One planned company</p>
+                <p className="group-structure">Three companies within U Build Group</p>
               </article>
             </Reveal>
 

@@ -16,6 +16,15 @@ const companies = [
     mark: "/brand/u-build-construction-logo.png",
   },
   {
+    name: "U Build Developments",
+    type: "Property ownership and leasing",
+    focus: "Commercial property ownership and leasing, including 9158 Quarry Road in Stony Mountain.",
+    href: "https://u-build-developments.vercel.app/",
+    accent: "properties",
+    status: "Visit company site",
+    mark: "/brand/u-build-developments-logo-2026.png",
+  },
+  {
     name: "Everett Construction Group",
     type: "Indigenous owned and operated",
     focus: "Construction for northern, remote and First Nations communities.",
@@ -23,15 +32,6 @@ const companies = [
     accent: "everett",
     status: "Visit company site",
     mark: "/brand/everett-logo2.png",
-  },
-  {
-    name: "U Build Developments",
-    type: "In development",
-    focus: "Commercial property ownership and leasing, including 9158 Quarry Road in Stony Mountain.",
-    href: null,
-    accent: "properties",
-    status: "Coming 2026",
-    mark: "/brand/u-build-developments-logo-2026.png",
   },
 ] as const;
 
@@ -147,7 +147,7 @@ export function DivisionGateway() {
             </>
           );
 
-          return company.href ? (
+          return (
             <motion.a
               className={`company-band is-${company.accent}`}
               href={company.href}
@@ -161,17 +161,6 @@ export function DivisionGateway() {
             >
               {content}
             </motion.a>
-          ) : (
-            <motion.article
-              className={`company-band is-${company.accent} is-pending`}
-              custom={index}
-              variants={companyVariants}
-              initial={false}
-              animate="visible"
-              key={company.name}
-            >
-              {content}
-            </motion.article>
           );
         })}
       </div>
