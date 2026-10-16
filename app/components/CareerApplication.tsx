@@ -51,7 +51,7 @@ export function CareerApplication() {
   return <>
     <section id="openings" className="careers-openings" aria-labelledby="openings-title">
       <div className="careers-section-heading">
-        <h2 id="openings-title">Current opportunities.</h2>
+        <h2 id="openings-title">Current opportunities</h2>
         <p>Explore roles by trade. You’ll join the Group, with assignments across its companies based on the work required.</p>
       </div>
       {jobCategories.filter((category) => category.applicationsOpen).map((category) => <section className="careers-category" key={category.name} aria-labelledby={`category-${category.name}`}>
@@ -66,7 +66,7 @@ export function CareerApplication() {
     </section>
     <section id="apply" className="careers-apply" aria-labelledby="apply-title">
       <div className="careers-apply-intro">
-        <h2 id="apply-title">Tell us about yourself.</h2>
+        <h2 id="apply-title">Tell us about yourself</h2>
         <p>Send your résumé to the U Build Group careers team. Choose a role above, or submit a general application.</p>
         <p>Prefer email? Send your application to <a href={`mailto:${careersEmail}`}>{careersEmail}</a>.</p>
       </div>

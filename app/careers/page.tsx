@@ -18,7 +18,7 @@ export default function CareersPage() {
     <main id="main-content" className="careers-page">
       <section className="careers-intro" aria-labelledby="careers-title">
         <div>
-          <h1 id="careers-title">Build your career with U Build Group.</h1>
+          <h1 id="careers-title">Build your career with U Build Group</h1>
           <p>One team, working across our companies. Join U Build Group and support U Build Construction and Everett Construction Group as project needs change.</p>
           <a className="company-jump" href="#openings">Explore open roles <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 4v16m-6-6 6 6 6-6" /></svg></a>
         </div>

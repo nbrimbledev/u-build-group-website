@@ -26,7 +26,7 @@ export default function TeamPage() {
       <main className="team-page team-page-grid" id="main-content">
         <section className="team-hero" aria-labelledby="team-page-title">
           <div className="team-hero-copy">
-            <h1 id="team-page-title">Meet the people behind U Build Group.</h1>
+            <h1 id="team-page-title">Meet the people behind U Build Group</h1>
             <p>One group, built through the people who lead its companies and support their work across Manitoba.</p>
           </div>
           <TeamBanner />

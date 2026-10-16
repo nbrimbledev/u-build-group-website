@@ -25,7 +25,7 @@ export default function GalleryPage() {
       <main id="main-content" className="gallery-page">
         <section className="gallery-section" aria-labelledby="gallery-title">
           <div className="gallery-heading">
-            <div><p className="gallery-eyebrow">U Build Group</p><h1 id="gallery-title">Our work in pictures.</h1></div>
+            <div><p className="gallery-eyebrow">U Build Group</p><h1 id="gallery-title">Our work in pictures</h1></div>
             <p>A closer look at projects across Manitoba.</p>
           </div>
           <Gallery photos={galleryPhotos} />

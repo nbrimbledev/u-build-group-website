@@ -18,7 +18,7 @@ export default function Home() {
             <Reveal>
               <div className="group-intro">
                 <div>
-                  <h2 id="group-title">A shared foundation for distinct companies.</h2>
+                  <h2 id="group-title">A shared foundation for distinct companies</h2>
                   <p className="lead-copy">
                     U Build Group brings together U Build Construction and Everett Construction Group, separate sister companies serving construction projects across Manitoba.
                   </p>
@@ -37,14 +37,14 @@ export default function Home() {
 
             <Reveal className="group-foundation">
               <article>
-                <h3>Founder-led from the start.</h3>
+                <h3>Founder-led from the start</h3>
                 <p>
                   U Build Construction was founded by Brody Leathwood and Richard Maxwell after years of working together. They remain personally involved throughout the build while the company continues to invest in its people, technology, quality improvement and practical systems that help clients protect schedules and budgets.
                 </p>
                 <p className="founder-names">Brody Leathwood <span aria-hidden="true">+</span> Richard Maxwell</p>
               </article>
               <article>
-                <h3>Separate companies with clear mandates.</h3>
+                <h3>Separate companies with clear mandates</h3>
                 <p>
                   Everett Construction Group, established in 2020, operates as a separate Indigenous-owned sister company focused on northern, remote and First Nations communities. U Build Developments focuses on commercial property ownership and leasing.
                 </p>
@@ -58,20 +58,20 @@ export default function Home() {
             <Reveal>
               <section className="core-competencies" aria-labelledby="core-competencies-title">
                 <div className="core-competencies-heading">
-                  <h3 id="core-competencies-title">Core competencies.</h3>
+                  <h3 id="core-competencies-title">Core competencies</h3>
                   <p>The standards shared across U Build Group.</p>
                 </div>
                 <div className="core-competencies-grid">
                   <article>
-                    <h4><span>Driven</span> in how we approach the work.</h4>
+                    <h4><span>Driven</span> in how we approach the work</h4>
                     <p>We take initiative, solve problems early and keep the work moving.</p>
                   </article>
                   <article>
-                    <h4><span>Ethical</span> in how we conduct ourselves.</h4>
+                    <h4><span>Ethical</span> in how we conduct ourselves</h4>
                     <p>We communicate openly and make decisions with honesty, fairness and integrity.</p>
                   </article>
                   <article>
-                    <h4><span>Dependable</span> in what we deliver.</h4>
+                    <h4><span>Dependable</span> in what we deliver</h4>
                     <p>We arrive prepared, honour our commitments and consistently deliver on expectations.</p>
                   </article>
                 </div>
@@ -86,7 +86,7 @@ export default function Home() {
             <div className="content-section reach-heading-content">
               <Reveal>
                 <div className="section-heading split-heading">
-                  <h2 id="reach-title">Selected Manitoba locations, with a clear company focus.</h2>
+                  <h2 id="reach-title">Selected Manitoba locations, with a clear company focus</h2>
                   <p>The map highlights selected communities, project locations and the group’s first commercial property. Everett Construction Group focuses on northern, remote and First Nations communities, while U Build Construction serves projects elsewhere across Manitoba.</p>
                 </div>
               </Reveal>
@@ -101,7 +101,7 @@ export default function Home() {
             <Reveal className="division-record">
               <div className="division-record-heading">
                 <div>
-                  <h3>U Build Projects, by the numbers.</h3>
+                  <h3>U Build Projects, by the numbers</h3>
                 </div>
               </div>
               <div className="statistics-grid">
